@@ -20,6 +20,6 @@ Step5. 查找排序。利用模型，计算相似度，排序。-------迭代一
 4. 迭代一 todo.list  
 Step1. 缺陷文件的预处理 (Done. in data/class_preprocessed)  
 Step2. T构建索引。根据关键词，能找到对应文件。(Todo1 怎么构建这样的缩影)   
-Step3. 优化暂不做
-Step4. 查询的文件的预处理。(Done. in data/report_preprocessed)
+Step3. 优化暂不做  
+Step4. 查询的文件的预处理。(Done. in data/report_preprocessed)  
 Step5. 查找排序。(Todo2 VSM模型代码、计算相似度、排序)
