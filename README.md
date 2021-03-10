@@ -9,7 +9,7 @@ Our work is in hope of seaching and killing a bug.
 2. 任务规划  
 Step1. 预处理。对源文件(.xml)预处理（源文件->一串词组）  
 Step2. 构建索引。构建源文件的索引，便于模型查找源文件。---------迭代一\
-Step3. 抽取特征。抽取bug文件(.xml)的特征。\
+Step3. 抽取特征。抽取bug文件(.xml)的特征。属于优化\
 Step4. 预处理。对bug文件(.xml)预处理（文件->一串词组，同1）。----------迭代一\
 Step5. 查找排序。利用模型，计算相似度，排序。-------迭代一
 3. 待解决的问题  
@@ -17,4 +17,9 @@ Step5. 查找排序。利用模型，计算相似度，排序。-------迭代一
 (2). 哪些特征？  
 (3). 选择什么作为相似度？  
 (4). 哪种模型？
-
+4. 迭代一 todo.list  
+Step1. 缺陷文件的预处理 (Done. in data/class_preprocessed)  
+Step2. T构建索引。根据关键词，能找到对应文件。(Todo1 怎么构建这样的缩影)   
+Step3. 优化暂不做
+Step4. 查询的文件的预处理。(Done. in data/report_preprocessed)
+Step5. 查找排序。(Todo2 VSM模型代码、计算相似度、排序)
