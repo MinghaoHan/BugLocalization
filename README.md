@@ -25,3 +25,4 @@ Step4. 查询的缺陷文件的预处理。(Done. in data/report_preprocessed)
 Step5. 查找排序。(Todo2 VSM模型代码、计算相似度、排序)
 
 构建索引：https://blog.csdn.net/qq_35975685/article/details/79811859
+https://blog.csdn.net/m0_37913549/article/details/78989078
