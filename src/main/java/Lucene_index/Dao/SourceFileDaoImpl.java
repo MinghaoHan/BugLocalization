@@ -9,7 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 public class SourceFileDaoImpl implements SourceFileDao{
-
+    /**
+     * 从数据库中读取所有源文件信息
+     * @return 源文件list: String id, name, path, Map<String,String>word
+     * @throws Exception
+     */
     public List<SourceFile> querySFList() throws Exception{
         // 数据库链接
         Connection connection = null;
@@ -22,7 +26,7 @@ public class SourceFileDaoImpl implements SourceFileDao{
         // 加载数据库驱动
             Class.forName("com.mysql.jdbc.Driver"); // 连接数据库
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sourceFile", "root", "Hmh08715");
-            String sql = "SELECT * FROM tb_sku";
+            String sql = "SELECT * FROM SourceFile";
             preparedStatement = connection.prepareStatement(sql); // 获取结果集
             resultSet = preparedStatement.executeQuery();
         // 结果集解析
@@ -32,20 +36,20 @@ public class SourceFileDaoImpl implements SourceFileDao{
                 SF.setName(resultSet.getString("name"));
                 SF.setPath(resultSet.getString("path"));
 
-                Map<String,Float> Word = new HashMap<String,Float>();
+                Map<String,String> Word = new HashMap<String,String>();
                 {
                     ResultSetMetaData rsmd = resultSet.getMetaData();
                     int numberOfColumns = rsmd.getColumnCount();
                     String sKey = "";
-                    float sValue = 0;
+                    String sValue = "";
                     if (Word != null) {
                         for (int i = 1; i <= numberOfColumns; i++) {
                             sKey = (rsmd.getColumnName(i)).trim();
                             String tString = resultSet.getString(i);
-                            if (tString == null) sValue = 0;
+                            if (tString == null) sValue = "0";
                             else {
-                                if (tString.trim()==null) sValue=0;
-                                else   sValue = Float.parseFloat(tString.trim());
+                                if (tString.trim()==null) sValue="0";
+                                else   sValue = tString.trim();
                             }
                             Word.put(sKey, sValue);
                         }
