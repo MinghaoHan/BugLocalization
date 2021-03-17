@@ -1,16 +1,26 @@
 package query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class query {
-    private ArrayList<wordMap> corpus;    // 语料库
+
+    private ArrayList<wordMap> corpus=new ArrayList<wordMap>();    // 语料库
     private int DFileNums;    // 语料库里的文件总数
+
+    public ArrayList<wordMap> getCorpus() {
+        return corpus;
+    }
+
+    public int getDFileNums() {
+        return DFileNums;
+    }
 
     /**
      * 初始化语料库
      * @param textFiles
      */
-    query(String[] textFiles) {
+    public query(List<String> textFiles) {
         DFileNums = 0;
         for (String fileName : textFiles) {
             DFileNums += 1;
