@@ -8,10 +8,7 @@ import query.wordMap;
 import java.io.File;
 import java.sql.*;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CreateIndexDaoImpl implements CreateIndexDao{
     private Sources ss;
@@ -57,12 +54,25 @@ public class CreateIndexDaoImpl implements CreateIndexDao{
             String Path = corpus.get(i).getTextName();
             String Word = "";
 
-            Map<String,String> words = new HashMap<>();
+            Map<String,Double> words = new HashMap<>();
             HashMap<String, Integer> wordCount = corpus.get(i).getWordCountTable();
-            DecimalFormat df = new DecimalFormat();
+            DecimalFormat df = new DecimalFormat("#00.0000");
             for(String tmpWord : wordCount.keySet()) {
-                Word = Word + tmpWord +" ";
-                Word = Word + df.format(queries.countTF(Path,tmpWord)*queries.countIDF(tmpWord)) + " ";
+                words.put(tmpWord,queries.countTF(Path,tmpWord)*queries.countIDF(tmpWord));
+            }
+
+            //选择前 20 个词，写入数据库
+            List<Map.Entry<String,Double>> mappingList = null;
+            mappingList = new ArrayList<Map.Entry<String,Double>>(words.entrySet());
+            //通过比较器实现比较排序
+            Collections.sort(mappingList, new Comparator<Map.Entry<String,Double>>(){
+                public int compare(Map.Entry<String,Double> mapping1,Map.Entry<String,Double> mapping2){
+                    if (mapping1.getValue()< mapping2.getValue()) return 1;
+                    else return -1; }
+            });
+
+            for(int j = 0;j < (mappingList.size()) && j<20;j++) {
+                Word = Word + mappingList.get(j).getKey() + " " + String.valueOf(df.format(mappingList.get(j).getValue())) + " ";
             }
 
             String sql_insert = "insert into sourceFile values(" + f_id + ", '" + name + "','" + Path + "','" + Word + "')";
