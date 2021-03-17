@@ -14,7 +14,7 @@ public class SourceFile {
     private String path;
 
     //源代码文件 单词和tf-idf值
-    private Map<String,Float> word;
+    private Map<String,String> word;
 
     public String getId() {
         return id;
@@ -40,11 +40,11 @@ public class SourceFile {
         this.path = path;
     }
 
-    public Map<String, Float> getWord() {
+    public Map<String, String> getWord() {
         return word;
     }
 
-    public void setWord(Map<String, Float> word) {
+    public void setWord(Map<String, String> word) {
         this.word = word;
     }
 }

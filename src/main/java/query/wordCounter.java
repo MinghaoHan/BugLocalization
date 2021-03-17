@@ -12,7 +12,7 @@ import java.util.Set;
 public class wordCounter {
 
     public static HashMap<String, Integer> getWordCountTable(String fileName) {
-        HashMap<String, Integer> WordCountTable = new HashMap<>();;
+        HashMap<String, Integer> WordCountTable = new HashMap<>();
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
             String line = "";
@@ -33,11 +33,6 @@ public class wordCounter {
 
             bufferedReader.close();//关闭字节流
 
-            //打印结果
-            //Set<Map.Entry<String, Integer>> entrySet = wordMap.entrySet();
-            //for (Map.Entry<String, Integer> entry : entrySet) {
-            //    System.out.println(entry.getKey() + ":" + entry.getValue());
-            //}
         }
         catch (IOException e) {
             System.out.println("File Not Found.");

@@ -8,6 +8,11 @@ import java.util.Set;
 
 public class wordMap {
     private String textName;    // 文本名
+
+    public HashMap<String, Integer> getWordCountTable() {
+        return wordCountTable;
+    }
+
     private HashMap<String, Integer> wordCountTable;    // 词频统计表
     private int allWordsNum;    // 该文本内含的单词总数
 
