@@ -1,4 +1,4 @@
-package Lucene_index.test;
+package Lucene_indexTest.test;
 
 import org.junit.Test;
 

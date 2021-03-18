@@ -1,4 +1,4 @@
-package query.test;
+package queryTest.test;
 
 import org.junit.Test;
 import query.query;
