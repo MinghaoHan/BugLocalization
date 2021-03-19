@@ -1,6 +1,6 @@
 # nobug
 
-Our work is in hope of seaching and killing a bug.
+Our work is in hope of seaching and killing any bug.
 
 ## 软工三——基于IR模型的bug定位
 迭代一：\
