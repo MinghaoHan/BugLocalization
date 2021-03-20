@@ -1,4 +1,4 @@
-package BugLocatorTest;
+package BugLocator;
 
 import Models.VectorSpaceModel;
 import lib.BugReporter;

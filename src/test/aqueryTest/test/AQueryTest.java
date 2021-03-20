@@ -1,4 +1,4 @@
-package queryTest.test;
+package aqueryTest.test;
 
 import org.junit.Test;
 import query.query;
@@ -9,7 +9,7 @@ import java.util.*;
 
 import query.wordMap;
 
-public class QueryTest {
+public class AQueryTest {
     @Test
     public void querytest(){
         File file = new File("data/class_preprocessed/");
@@ -41,7 +41,6 @@ public class QueryTest {
                 words.put(tmpWord,queries.countTF(Path,tmpWord)*queries.countIDF(tmpWord));
             }
 
-            //选择前xx个词，写入数据库
             List<Map.Entry<String,Double>> mappingList = null;
             mappingList = new ArrayList<Map.Entry<String,Double>>(words.entrySet());
             //通过比较器实现比较排序
@@ -52,7 +51,6 @@ public class QueryTest {
             });
 
             for(int j = 0;j < (mappingList.size()) && j<10;j++){
-                System.out.println(df.format(123.45678));
                 System.out.println(mappingList.get(j).getKey()+":"+df.format(mappingList.get(j).getValue()));
             }
 

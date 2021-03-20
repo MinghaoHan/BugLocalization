@@ -1,4 +1,4 @@
-import BugLocatorTest.BugLocator;
+import BugLocator.BugLocator;
 import lib.BugReporter;
 import lib.Sources;
 

@@ -40,7 +40,7 @@ public class SourceFile {
         this.path = path;
     }
 
-    public Map<String, String> getWord() {
+    public Map<String, String>  getWord() {
         return word;
     }
 
