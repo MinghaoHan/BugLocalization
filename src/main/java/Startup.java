@@ -1,4 +1,5 @@
 import BugLocator.BugLocator;
+import Lucene_index.IndexCreate.CreateIndexDaoImpl;
 import lib.BugReporter;
 import lib.Sources;
 
@@ -9,8 +10,8 @@ public class Startup {
         Sources ss = new Sources("data/class_preprocessed/");
         BugReporter bugs = new BugReporter("data/report_preprocessed/");
 
-    //  CreateIndexDaoImpl cidi = new CreateIndexDaoImpl(ss);
-    //  cidi.createSourceIndex();
+        CreateIndexDaoImpl cidi = new CreateIndexDaoImpl(ss);
+        cidi.createSourceIndex();
         BugLocator bugLocator = new BugLocator(bugs,ss);
         bugLocator.bugLocator();
     }

@@ -61,7 +61,7 @@ public class CreateIndexDaoImpl implements CreateIndexDao{
                 words.put(tmpWord,queries.countTF(Path,tmpWord)*queries.countIDF(tmpWord));
             }
 
-            //选择前 20 个词，写入数据库
+            //选择前 30 个词，写入数据库
             List<Map.Entry<String,Double>> mappingList = null;
             mappingList = new ArrayList<Map.Entry<String,Double>>(words.entrySet());
             //通过比较器实现比较排序
@@ -71,7 +71,7 @@ public class CreateIndexDaoImpl implements CreateIndexDao{
                     else return -1; }
             });
 
-            for(int j = 0;j < (mappingList.size()) && j<20;j++) {
+            for(int j = 0;j < (mappingList.size()) && j<30;j++) {
                 Word = Word + mappingList.get(j).getKey() + " " + String.valueOf(df.format(mappingList.get(j).getValue())) + " ";
             }
 
