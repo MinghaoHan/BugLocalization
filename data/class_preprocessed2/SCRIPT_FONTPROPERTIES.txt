@@ -1,0 +1,1 @@
+org eclips swt intern win script fontproperti cbyte wgblank wgdefault wginvalid wgkashida ikashidawidth sizeof

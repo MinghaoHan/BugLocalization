@@ -1,0 +1,1 @@
+org eclips swt intern win paintstruct hdc feras rect rcpaint leav top bottom frestor fincupd rgbreserv sizeof

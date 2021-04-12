@@ -1,0 +1,1 @@
+coolbar orient vertic drag handl render vertic vertic dot want coolbar coolitem intro launch bar o specif handl render posit coolbar vertic leav window trim area orient coolitem handl render horizont horizont dot

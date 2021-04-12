@@ -1,0 +1,1 @@
+org eclips swt intern ol win ipersiststorag ipersist ipersiststorag address address isdirti vtblcall address initnew pstg vtblcall address pstg load pstg vtblcall address pstg save pstgsave fsameasload vtblcall address pstgsave fsameasload savecomplet pstgnew vtblcall address pstgnew handsoffstorag vtblcall address

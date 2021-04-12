@@ -1,0 +1,1 @@
+org eclips swt custom styledtextcont addtextchangelisten textchangelisten listen getcharcount string getlin lineindex getlineatoffset offset getlinecount string getlinedelimit getoffsetatlin lineindex string gettextrang start length removetextchangelisten textchangelisten listen replacetextrang start replacelength string text settext string text

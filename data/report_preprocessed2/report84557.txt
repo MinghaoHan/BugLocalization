@@ -1,0 +1,1 @@
+run linux gtk ctrl esc bring handi editor window unfortuantlei list empti

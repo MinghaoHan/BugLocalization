@@ -1,0 +1,1 @@
+org eclips swt intern ol win org eclips swt intern win iviewobject iunknown iviewobject address address getext dwaspect lindex dvtargetdevic ptd size lpsizel vtblcall address dwaspect lindex ptd lpsizel setadvis dwaspect dwadvf piadvisesink vtblcall address dwaspect dwadvf piadvisesink

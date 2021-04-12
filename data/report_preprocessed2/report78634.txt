@@ -1,0 +1,1 @@
+implement gettransparencymask appear fulli opaqu mask imag transpar javadoc infer imagedata gettransparencymask implement imagedata colormask note transpar mask base alphadata valu threshold

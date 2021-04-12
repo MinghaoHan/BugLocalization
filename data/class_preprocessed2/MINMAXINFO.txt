@@ -1,0 +1,1 @@
+org eclips swt intern win minmaxinfo point ptreserv ptreserv ptreserv point ptmaxsiz ptmaxsiz ptmaxsiz point ptmaxposit ptmaxposit ptmaxposit point ptmintracks ptmintracks ptmintracks point ptmaxtracks ptmaxtracks ptmaxtracks sizeof

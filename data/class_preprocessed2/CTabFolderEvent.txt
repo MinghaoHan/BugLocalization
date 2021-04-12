@@ -1,0 +1,1 @@
+org eclips swt custom org eclips swt event org eclips swt widget ctabfolderev typedev widget item doit width height serialversionuid ctabfolderev widget string tostr string string tostr string substr string length remov trail item item doit doit width width height height

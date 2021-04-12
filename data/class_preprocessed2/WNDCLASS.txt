@@ -1,0 +1,1 @@
+org eclips swt intern win wndclass style lpfnwndproc cbclsextra cbwndextra hinstanc hicon hcursor hbrbackground lpszmenunam lpszclassnam sizeof

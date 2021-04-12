@@ -1,0 +1,1 @@
+org eclips swt intern win monitorinfo cbsize rect rcmonitor rcmonitor leav rcmonitor top rcmonitor rcmonitor bottom rect rcwork rcwork leav rcwork top rcwork rcwork bottom dwflag sizeof

@@ -1,0 +1,1 @@
+org eclips swt intern win printdlg lstructsiz dword hwndowner hwnd hdevmod hglobal hdevnam hglobal hdc hdc flag dword nfrompag word ntopag word nminpag word nmaxpag word ncopi word hinstanc hinstanc lcustdata lparam lpfnprinthook lpprinthookproc lpfnsetuphook lpsetuphookproc lpprinttemplatenam lpctstr lpsetuptemplatenam lpctstr hprinttempl hglobal hsetuptempl hglobal sizeof

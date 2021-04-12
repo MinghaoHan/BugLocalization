@@ -1,0 +1,1 @@
+org eclips swt ol win olepropertydescript string type flag kind string descript string helpfil

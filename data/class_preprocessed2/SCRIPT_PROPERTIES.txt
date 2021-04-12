@@ -1,0 +1,1 @@
+org eclips swt intern win script properti langid fnumer fcomplex fneedswordbreak fneedscaretinfo bcharset fcontrol fprivateusearea fneedscharacterjustifi finvalidglyph finvalidlogattr fcdm fambiguouscharset fclustersizevari frejectinvalid sizeof

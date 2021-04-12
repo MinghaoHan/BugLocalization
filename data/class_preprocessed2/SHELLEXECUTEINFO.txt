@@ -1,0 +1,1 @@
+org eclips swt intern win shellexecuteinfo cbsize fmask hwnd lpverb lpfile lpparamet lpdirectori nshow hinstapp option member lpidlist lpclass hkeyclass dwhotkei union handl hicon handl hmonitor hicon hprocess sizeof

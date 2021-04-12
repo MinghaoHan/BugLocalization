@@ -1,0 +1,1 @@
+variant tostr call getstr case except type vt empti string tostr gettyp vt empti amp quot amp quot getstr version

@@ -1,0 +1,1 @@
+org eclips swt intern ol win funcdesc memid lprgscode lprgelemdescparam funckind invkind callconv cparam cparamsopt ovft cscode elemdesc elemdescfunc typedesc elemdescfunc tdesc elemdescfunc tdesc union elemdescfunc tdesc vt paramdesc elemdescfunc paramdesc elemdescfunc paramdesc pparamdescex elemdescfunc paramdesc wparamflag wfuncflag sizeof

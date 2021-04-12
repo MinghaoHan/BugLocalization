@@ -1,0 +1,1 @@
+org eclips swt print org eclips swt graphic printerdata devicedata string driver string scope startpag endpag printtofil string filenam copycount collat rang select otherdata printerdata printerdata string driver string driver driver string tostr printerdata driver driver nl nl nl nl

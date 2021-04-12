@@ -1,0 +1,1 @@
+org eclips swt intern win textmetrica textmetr tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof

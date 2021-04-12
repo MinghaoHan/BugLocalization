@@ -1,0 +1,1 @@
+org eclips swt intern win guithreadinfo cbsize flag hwndactiv hwndfocu hwndcaptur hwndmenuown hwndmoves hwndcaret rect rccaret leav top bottom sizeof

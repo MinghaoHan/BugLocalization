@@ -1,0 +1,1 @@
+org eclips swt intern win toolinfo cbsize uflag hwnd uid rect rect leav top bottom hinst lpsztext lparam sizeof

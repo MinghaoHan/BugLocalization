@@ -1,0 +1,1 @@
+org eclips swt intern win margin cxleftwidth cxrightwidth cytopheight cybottomheight sizeof

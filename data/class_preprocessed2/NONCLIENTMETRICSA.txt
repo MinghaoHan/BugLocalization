@@ -1,0 +1,1 @@
+org eclips swt intern win nonclientmetricsa nonclientmetr logfonta lfcaptionfont logfonta logfonta lfsmcaptionfont logfonta logfonta lfmenufont logfonta logfonta lfstatusfont logfonta logfonta lfmessagefont logfonta sizeof

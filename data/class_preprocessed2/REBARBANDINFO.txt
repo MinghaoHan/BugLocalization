@@ -1,0 +1,1 @@
+org eclips swt intern win rebarbandinfo cbsize fmask fstyle clrfore clrback lptext cch iimag hwndchild cxminchild cyminchild cx hbmback wid cychild cymaxchild cyintegr cxideal lparam cxheader sizeof o iswinc

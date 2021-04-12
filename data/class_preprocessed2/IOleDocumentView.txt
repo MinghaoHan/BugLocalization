@@ -1,0 +1,1 @@
+org eclips swt intern ol win org eclips swt intern win rect ioledocumentview iunknown ioledocumentview address address setinplacesit pipsit vtblcall address pipsit setrect rect prcview vtblcall address prcview fshow vtblcall address fshow uiactiv fuiactiv vtblcall address fuiactiv

@@ -1,0 +1,1 @@
+org eclips swt intern win notifyicondata cbsize hwnd uid uflag ucallbackmessag hicon dwstate dwstatemask uvers dwinfoflag sizeof o notifyicondata size
