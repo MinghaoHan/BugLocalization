@@ -1,28 +1,39 @@
 package BugLocator;
 
 import Models.VectorSpaceModel;
+import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
 import lib.BugReporter;
 import lib.Sources;
 
 import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class BugLocator {
 
+    private static Logger logger = Logger.getLogger(BugLocator.class.getName());
+
     private static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";
-    private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/sourceFile";
+    private static final String DATABASE_URL = "jdbc:mysql://106.15.88.231:3306/sourceFile";
     private static final String DATABASE_USER = "root";
-    private static final String DATABASE_PASSWORD = "Hmh08715";
+    private static final String DATABASE_PASSWORD = "hmh123456";
     private static Connection con = null;
     private List<HashMap<String,HashMap<String,Double>>> columns;
 
     private BugReporter bugs;
     private Sources ss;
+    private String RankList;
 
-    public BugLocator(BugReporter bugs, Sources ss) throws SQLException {
+    public BugLocator(BugReporter bugs, Sources ss, String ListPath) throws SQLException {
         this.bugs = bugs;
         this.ss = ss;
+        this.RankList = ListPath;
         sysoutStrTablePdmCloumns();
     }
 
@@ -37,7 +48,7 @@ public class BugLocator {
         this.con = con;
     }
 
-    public void bugLocator(){
+    public void bugLocator() throws IOException, WriteException {
         File file = new File(bugs.getPath());
         File[] bugFiles = file.listFiles();
         List<String> files = new ArrayList<String>();
@@ -62,11 +73,60 @@ public class BugLocator {
             System.out.println("-------------------------------------------------");
             List<Map.Entry<String, Double>> res = bugSort(path);
             for(int j=0;j<res.size();j++){
-                System.out.println(String.format("%-40s",res.get(j).getKey())+"  "+res.get(j).getValue());
+                String name_temp = res.get(j).getKey();
+                String v_temp = String.valueOf(res.get(j).getValue());
+
+                writeIn(name,name_temp,v_temp);
+                System.out.println(String.format("%-40s",name_temp)+"  "+v_temp);
             }
 
             System.out.println("-------------------------------------------------");
         }
+    }
+
+    public void writeIn(String bugR, String SF, String v) throws IOException, WriteException {
+        String [] title = {"BugReport","ClassFile","Similarity"};
+        File f = new File(this.RankList);
+
+        //不存在，创建
+        try {
+            if (!f.exists()) {
+                f.createNewFile();
+                //创建工作簿
+                WritableWorkbook workbookA = Workbook.createWorkbook(f);
+                //创建sheet
+                WritableSheet sheetA = workbookA.createSheet("RankList", 0);
+                Label labelA = null;
+                //设置列名
+                for (int i = 0; i < title.length; i++) {
+                    labelA = new Label(i, 0, title[i]);
+                    sheetA.addCell(labelA);
+                }
+                workbookA.write();
+                workbookA.close();
+            }
+
+            Workbook wb = Workbook.getWorkbook(f);
+            WritableWorkbook workbook = Workbook.createWorkbook(f,wb);
+            WritableSheet sheet=workbook.getSheet(0);  //获取到工作表，因为一个excel可能有多个工作表
+            int length = sheet.getRows();
+
+            Label lable = new Label(0, length, bugR);
+            sheet.addCell(lable);
+            lable = new Label(1,length,SF);
+            sheet.addCell(lable);
+            lable = new Label(2,length,v);
+            sheet.addCell(lable);
+
+            workbook.write();
+            wb.close();
+            workbook.close();
+            logger.info("Success. 写入一条记录。");
+        }catch (Exception e){
+            logger.info("Error: 文件写入失败!");
+        }
+
+
     }
 
     /**

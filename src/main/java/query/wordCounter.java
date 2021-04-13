@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 // 负责进行词频统计的工具类
 public class wordCounter {

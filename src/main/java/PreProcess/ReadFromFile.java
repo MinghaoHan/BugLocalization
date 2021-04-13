@@ -1,4 +1,4 @@
-package PreProcess;
+package Preprocess;
 
 import java.io.*;
 import java.util.ArrayList;

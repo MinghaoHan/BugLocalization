@@ -20,8 +20,8 @@ public class CreateIndexDaoImpl implements CreateIndexDao{
         Class.forName("com.mysql.jdbc.Driver");
 
         //一开始必须填一个已经存在的数据库
-        String url = "jdbc:mysql://localhost:3306/sourceFile";
-        Connection conn = DriverManager.getConnection(url, "root", "Hmh08715"); //修改成自己的账号密码
+        String url = "jdbc:mysql://106.15.88.231:3306/sourceFile";
+        Connection conn = DriverManager.getConnection(url, "root", "hmh123456"); //修改成自己的账号密码
         Statement stat = conn.createStatement();
 
         //创建SourceFile表
@@ -29,6 +29,8 @@ public class CreateIndexDaoImpl implements CreateIndexDao{
 
         //获取最后一行的id
 //        ResultSet tmpRS = stat.executeQuery("SELECT LAST_INSERT_ID()");
+
+        stat.executeUpdate("delete from sourceFile;");
         int lastID=0;
 
         //添加数据

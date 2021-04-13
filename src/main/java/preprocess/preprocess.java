@@ -1,4 +1,4 @@
-package PreProcess;
+package Preprocess;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
@@ -19,9 +19,6 @@ public class PreProcess {
 
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
-
-
-
 
     public PreProcess(String comments){
 
@@ -162,12 +159,6 @@ public class PreProcess {
 
             return result;
 
-
     }
 
 }
-
-
-
-
-

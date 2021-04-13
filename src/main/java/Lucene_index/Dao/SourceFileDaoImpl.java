@@ -25,7 +25,7 @@ public class SourceFileDaoImpl implements SourceFileDao{
         try {
         // 加载数据库驱动
             Class.forName("com.mysql.jdbc.Driver"); // 连接数据库
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sourceFile", "root", "Hmh08715");
+            connection = DriverManager.getConnection("jdbc:mysql://106.15.88.231:3306/sourceFile", "root", "hmh123456");
             String sql = "SELECT * FROM SourceFile";
             preparedStatement = connection.prepareStatement(sql); // 获取结果集
             resultSet = preparedStatement.executeQuery();
