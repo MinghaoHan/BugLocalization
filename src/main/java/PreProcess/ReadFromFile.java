@@ -211,7 +211,7 @@ public class ReadFromFile {
         ReadFromFile.setKeyWordsList(keyWordsList);
         ReadFromFile.setStopWordsList(stopWordsList);
 
-        ReadFromFile.recursiveRead(path1,"data/class_preprocessed2/");
+        //ReadFromFile.recursiveRead(path1,"data/class_preprocessed2/");
         ReadFromFile.readBugFile(path2,"data/report_preprocessed2/");
 
     }
