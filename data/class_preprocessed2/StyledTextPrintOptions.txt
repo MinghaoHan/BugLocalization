@@ -1,1 +1,1 @@
-org eclips swt custom styledtextprintopt string tag string separ string header string footer string jobnam printtextforeground printtextbackground printtextfontstyl printlinebackground
+org eclips wt custom style text print option string tag string separ string header string footer string job name print text foreground print text background print text font style print line background

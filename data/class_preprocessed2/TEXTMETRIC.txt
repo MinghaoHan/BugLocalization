@@ -1,1 +1,1 @@
-org eclips swt intern win textmetr tmheight tmascent tmdescent tminternallead tmexternallead tmavecharwidth tmmaxcharwidth tmweight tmoverhang tmdigitizedaspectx tmdigitizedaspecti tmital tmunderlin tmstruckout tmpitchandfamili tmcharset sizeof o isunicod
+org eclips wt intern win text metric tm height tm ascent tm descent tm intern lead tm extern lead tm av char width tm max char width tm weight tm overhang tm digit aspect tm digit aspect tm ital tm underlin tm strike out tm pitch and famili tm char set size of o be unicod

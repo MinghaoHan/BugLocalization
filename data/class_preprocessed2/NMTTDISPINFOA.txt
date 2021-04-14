@@ -1,1 +1,1 @@
-org eclips swt intern win nmttdispinfoa nmttdispinfo sztext sizeof
+org eclips wt intern win nmt disp info nmt disp info sz text size of

@@ -1,1 +1,1 @@
-org eclips swt intern win textmetricw textmetr tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof
+org eclips wt intern win text metric text metric tm first char tm last char tm default char tm break char size of

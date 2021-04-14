@@ -1,1 +1,1 @@
-org eclips swt custom org eclips swt event bidisegmentev typedev lineoffset string linetext segment serialversionuid bidisegmentev styledtextev lineoffset detail linetext text
+org eclips wt custom org eclips wt event bidi segment event type event line offset string line text segment serial version id bidi segment event style text event line offset detail line text text

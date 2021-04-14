@@ -1,1 +1,1 @@
-org eclips swt intern win litem mask ilink statemask szid o max linkid text szurl o max url length sizeof
+org eclips wt intern win item mask link state mask sz id o max link id text sz url o max url length size of

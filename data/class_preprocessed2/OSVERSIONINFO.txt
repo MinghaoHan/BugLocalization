@@ -1,1 +1,1 @@
-org eclips swt intern win osversioninfo dwosversioninfos dwmajorvers dwminorvers dwbuildnumb dwplatformid sizeof o isunicod
+org eclips wt intern win o version info dw o version info size dw major version dw minor version dw build number dw platform id size of o be unicod

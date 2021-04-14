@@ -1,1 +1,1 @@
-org eclips swt intern win logbrush lbstyle lbcolor lbhatch sizeof
+org eclips wt intern win log brush lb style lb color lb hatch size of

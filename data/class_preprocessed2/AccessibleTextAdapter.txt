@@ -1,1 +1,1 @@
-org eclips swt access accessibletextadapt accessibletextlisten getcaretoffset accessibletextev getselectionrang accessibletextev
+org eclips wt access access text adapt access text listen get caret offset access text event get select rang access text event

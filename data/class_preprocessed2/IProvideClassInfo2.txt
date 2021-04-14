@@ -1,1 +1,1 @@
-org eclips swt intern ol win iprovideclassinfo iprovideclassinfo iprovideclassinfo address address getguid dwguidkind guid pguid vtblcall address dwguidkind pguid
+org eclips wt intern ol win provid class info provid class info provid class info address address get gui dw gui kind gui gui vt bl call address dw gui kind guu

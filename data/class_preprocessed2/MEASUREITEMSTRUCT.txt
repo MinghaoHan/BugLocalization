@@ -1,1 +1,1 @@
-org eclips swt intern win measureitemstruct ctltype ctlid itemid itemwidth itemheight itemdata sizeof
+org eclips wt intern win measur item struct tl type ct lid itemid item width item height item datum size of

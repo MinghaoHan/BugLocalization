@@ -1,1 +1,1 @@
-org eclips swt intern win nonclientmetr cbsize iborderwidth iscrollwidth iscrollheight icaptionwidth icaptionheight ismcaptionwidth ismcaptionheight imenuwidth imenuheight sizeof o isunicod
+org eclips wt intern win non client metric cb size border width scroll width scroll height caption width caption height be caption width be caption height menu width menu height size of o be unicod

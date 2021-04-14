@@ -1,1 +1,1 @@
-org eclips swt intern win script properti langid fnumer fcomplex fneedswordbreak fneedscaretinfo bcharset fcontrol fprivateusearea fneedscharacterjustifi finvalidglyph finvalidlogattr fcdm fambiguouscharset fclustersizevari frejectinvalid sizeof
+org eclips wt intern win script properti langu numer complex need word break need caret info char set control privat us area need charact justifi invalid glyph invalid log at tr fcd ambigu char set cluster size vari reject invalid size of

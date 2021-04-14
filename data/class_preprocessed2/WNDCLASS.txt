@@ -1,1 +1,1 @@
-org eclips swt intern win wndclass style lpfnwndproc cbclsextra cbwndextra hinstanc hicon hcursor hbrbackground lpszmenunam lpszclassnam sizeof
+org eclips wt intern win nd class style lp nw nd proc cbc l extra cb nd extra instanc icon cursor hbr background lp menu name lp class name size of

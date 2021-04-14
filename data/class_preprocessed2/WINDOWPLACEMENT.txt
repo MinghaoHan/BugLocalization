@@ -1,1 +1,1 @@
-org eclips swt intern win windowplac length flag showcmd point ptminposit ptminposit ptminposit point ptmaxposit ptmaxposit ptmaxposit rect rcnormalposit leav top bottom sizeof
+org eclips wt intern win window placement length flag show cm point pt min posit pt min posit pt min posit point pt max posit pt max posit pt max posit rect rc normal posit leav top bottom size of

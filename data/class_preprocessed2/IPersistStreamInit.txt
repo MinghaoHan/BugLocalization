@@ -1,1 +1,1 @@
-org eclips swt intern ol win ipersiststreaminit ipersist ipersiststreaminit address address load pstm vtblcall address pstm initnew vtblcall address
+org eclips wt intern ol win persist stream in it persist persist stream in it address address load pst vt bl call address pst in it new vt bl call address

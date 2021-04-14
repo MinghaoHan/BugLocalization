@@ -1,1 +1,1 @@
-org eclips swt event mouseadapt mouselisten mousedoubleclick mouseev mousedown mouseev mouseup mouseev
+org eclips wt event mous adapt mous listen mous doubl click mous event mous down mous event mous up mous event

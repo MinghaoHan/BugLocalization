@@ -1,1 +1,1 @@
-org eclips swt intern win choosecolor lstructsiz hwndowner hinstanc rgbresult lpcustcolor flag lcustdata lpfnhook lptemplatenam sizeof
+org eclips wt intern win choos color struct size nd owner instanc rgb result lpc ust color flag lc ust datum lp fn hook lp templatenam size of

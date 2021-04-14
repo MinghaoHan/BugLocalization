@@ -1,1 +1,1 @@
-org eclips swt intern win nmttdispinfo nmhdr lpsztext hinst uflag lparam sizeof o isunicod
+org eclips wt intern win nmt disp info nm dr lp text in st flag param size of o be unicod

@@ -1,1 +1,1 @@
-org eclips swt dnd org eclips swt intern swteventlisten dragsourcelisten swteventlisten dragstart dragsourceev event dragsetdata dragsourceev event dragfinish dragsourceev event
+org eclips wt dnd org eclips wt intern wt event listen drag sourc listen wt event listen drag start drag sourc event event drag set datum drag sourc event event drag finish drag sourc event event

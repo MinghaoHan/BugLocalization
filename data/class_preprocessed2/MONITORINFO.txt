@@ -1,1 +1,1 @@
-org eclips swt intern win monitorinfo cbsize rect rcmonitor rcmonitor leav rcmonitor top rcmonitor rcmonitor bottom rect rcwork rcwork leav rcwork top rcwork rcwork bottom dwflag sizeof
+org eclips wt intern win monitor info cb size rect rc monitor rc monitor leav rc monitor top rc monitor rc monitor bottom rect rc work rc work leav rc work top rc work rc work bottom dw flag size of

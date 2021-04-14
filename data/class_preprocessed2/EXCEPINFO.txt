@@ -1,1 +1,1 @@
-org eclips swt intern ol win excepinfo wcode wreserv bstrsourc bstrdescript bstrhelpfil dwhelpcontext pvreserv pfndeferredfillin scode sizeof
+org eclips wt intern ol win ex ep info code reserv str sourc str descript str help file dw help context pv reserv pf defer fill in code size of

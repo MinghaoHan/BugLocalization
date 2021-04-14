@@ -1,1 +1,1 @@
-org eclips swt browser org eclips swt intern swteventlisten visibilitywindowlisten swteventlisten hide windowev event windowev event
+org eclips wt browser org eclips wt intern wt event listen visibl window listen wt event listen hide window event event window event event

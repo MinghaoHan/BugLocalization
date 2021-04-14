@@ -1,1 +1,1 @@
-org eclips swt intern win script fontproperti cbyte wgblank wgdefault wginvalid wgkashida ikashidawidth sizeof
+org eclips wt intern win script font properti byte wg blank wg default wg invalid wg kashi da kashi da width size of

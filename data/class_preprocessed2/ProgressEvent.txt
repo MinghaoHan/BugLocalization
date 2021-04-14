@@ -1,1 +1,1 @@
-org eclips swt browser org eclips swt widget org eclips swt event progressev typedev current total serialversionuid progressev widget
+org eclips wt browser org eclips wt widget org eclips wt event progress event type event current total serial version id progress event widget

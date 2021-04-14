@@ -1,1 +1,1 @@
-org eclips swt access accessibleadapt accessiblelisten getnam accessibleev gethelp accessibleev getkeyboardshortcut accessibleev getdescript accessibleev
+org eclips wt access access adapt access listen get name access event get help access event get keyboard shortcut access event get descript access event

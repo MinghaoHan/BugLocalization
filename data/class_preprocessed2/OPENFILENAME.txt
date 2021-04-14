@@ -1,1 +1,1 @@
-org eclips swt intern win openfilenam lstructsiz hwndowner hinstanc lpstrfilter lpstrcustomfilt nmaxcustfilt nfilterindex lpstrfile nmaxfil lpstrfiletitl nmaxfiletitl lpstrinitialdir lpstrtitl flag nfileoffset nfileextens lpstrdefext lcustdata lpfnhook lptemplatenam sizeof
+org eclips wt intern win open filenam struct size nd owner instanc lp tr filter lp tr custom filter max cu st filter filter index lp tr file max file lp tr file titl max file titl lp tr initi dir lp tr titl flag file offset file extens lp tr def ext lc ust datum lp fn hook lp templatenam size of

@@ -1,1 +1,1 @@
-org eclips swt browser org eclips swt intern swteventlisten closewindowlisten swteventlisten close windowev event
+org eclips wt browser org eclips wt intern wt event listen close window listen wt event listen close window event event

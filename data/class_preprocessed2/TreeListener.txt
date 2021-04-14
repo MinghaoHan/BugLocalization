@@ -1,1 +1,1 @@
-org eclips swt event org eclips swt intern swteventlisten treelisten swteventlisten treecollaps treeevent treeexpand treeevent
+org eclips wt event org eclips wt intern wt event listen tree listen wt event listen tree collaps tree event tree expand tree event

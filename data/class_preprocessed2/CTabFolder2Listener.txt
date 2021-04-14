@@ -1,1 +1,1 @@
-org eclips swt custom org eclips swt intern ctabfold listen swteventlisten close ctabfolderev event minim ctabfolderev event maxim ctabfolderev event restor ctabfolderev event showlist ctabfolderev event
+org eclips wt custom org eclips wt intern tab folder listen wt event listen close tab folder event event minim tab folder event event maxim tab folder event event restor tab folder event event show list tab folder event event

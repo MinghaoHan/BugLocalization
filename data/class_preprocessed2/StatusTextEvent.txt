@@ -1,1 +1,1 @@
-org eclips swt browser org eclips swt widget org eclips swt event statustextev typedev string text serialversionuid statustextev widget
+org eclips wt browser org eclips wt widget org eclips wt event statu text event type event string text serial version id statu text event widget

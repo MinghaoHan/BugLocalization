@@ -1,1 +1,1 @@
-org eclips swt intern win choosefont lstructsiz hwndowner hdc lplogfont ipoints flag rgbcolor lcustdata lpfnhook lptemplatenam hinstanc lpszstyle nfonttyp nsizemin nsizemax sizeof
+org eclips wt intern win choos font struct size nd owner dc lp log font point size flag rgb color lc ust datum lp fn hook lp templatenam instanc lp style font type size min size max size of

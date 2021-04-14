@@ -1,1 +1,1 @@
-org eclips swt intern win shmenubarinfo cbsize hwndparent dwflag ntoolbarid hinstr nbmpid cbmpimag hwndmb sizeof o issp
+org eclips wt intern win sh menu bar info cb size nd parent dw flag toolbar id in tre bmp id bmp imag dmb size of o be sp

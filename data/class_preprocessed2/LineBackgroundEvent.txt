@@ -1,1 +1,1 @@
-org eclips swt custom org eclips swt event org eclips swt graphic linebackgroundev typedev lineoffset start offset string linetext text color linebackground background color serialversionuid linebackgroundev styledtextev lineoffset detail linetext text
+org eclips wt custom org eclips wt event org eclips wt graphic line background event type event line offset start offset string line text text color line background background color serial version id line background event style text event line offset detail line text text

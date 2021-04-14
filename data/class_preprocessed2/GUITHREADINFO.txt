@@ -1,1 +1,1 @@
-org eclips swt intern win guithreadinfo cbsize flag hwndactiv hwndfocu hwndcaptur hwndmenuown hwndmoves hwndcaret rect rccaret leav top bottom sizeof
+org eclips wt intern win gui thread info cb size flag nd activ nd focu nd captur nd menu owner nd move size nd caret rect rc caret leav top bottom size of

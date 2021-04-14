@@ -1,1 +1,1 @@
-org eclips swt intern win nonclientmetricsw nonclientmetr logfontw lfcaptionfont logfontw logfontw lfsmcaptionfont logfontw logfontw lfmenufont logfontw logfontw lfstatusfont logfontw logfontw lfmessagefont logfontw sizeof
+org eclips wt intern win non client metric non client metric log font lf caption font log font log font fsm caption font log font log font lf menu font log font log font lf statu font log font log font lf messag font log font size of

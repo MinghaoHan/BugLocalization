@@ -1,1 +1,1 @@
-org eclips swt intern win keybdinput wvk wscan dwflag time dwextrainfo sizeof
+org eclips wt intern win kei bd input wv wsc a dw flag time dw extra info size of

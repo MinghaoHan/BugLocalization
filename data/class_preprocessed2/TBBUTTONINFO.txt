@@ -1,1 +1,1 @@
-org eclips swt intern win tbbuttoninfo cbsize dwmask idcommand iimag fsstate fsstyle cx lparam psztext cchtext sizeof
+org eclips wt intern win tb button info cb size dw mask id command imag f state f style cx param sz text ch text size of

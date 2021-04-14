@@ -1,1 +1,1 @@
-org eclips swt intern platform string platform win
+org eclips wt intern platform string platform win

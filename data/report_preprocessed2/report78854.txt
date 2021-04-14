@@ -1,1 +1,1 @@
-clipboardproxi getfunc o gtk select datum set function function copi datum tdata pvalu free o free
+clipboard proxi get fun o gtk select datum set function function copi datum datum valu free o free

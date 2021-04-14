@@ -1,1 +1,1 @@
-org eclips swt intern imag pngfilereadst object readihdr readplt readidat readiend critic chunk readtrn set idat read readpixeldata
+org eclips wt intern imag png file read state object read ih dr read pl te read id at read end critic chunk read trn set id at read read pixel datum

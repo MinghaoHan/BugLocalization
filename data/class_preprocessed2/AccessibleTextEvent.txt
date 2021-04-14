@@ -1,1 +1,1 @@
-org eclips swt access org eclips swt intern accessibletextev swteventobject childid offset length serialversionuid accessibletextev object sourc sourc string tostr accessibletextev childid childid nl offset offset nl length length nl nl
+org eclips wt access org eclips wt intern access text event wt event object child id offset length serial version id access text event object sourc sourc string to string access text event child id child id nl offset offset nl length length nl nl

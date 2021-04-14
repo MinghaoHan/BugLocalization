@@ -1,1 +1,1 @@
-org eclips swt intern ol win iconnectionpointcontain iunknown iconnectionpointcontain address address findconnectionpoint guid riid ppcp vtblcall address riid ppcp
+org eclips wt intern ol win connect point contain unknown connect point contain address address find connect point gui ri id pcp vt bl call address ri id pcp

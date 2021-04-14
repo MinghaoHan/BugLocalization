@@ -1,1 +1,1 @@
-run sampl tree column snippet snippet ` blurri ' text column select item antialias appli time
+run sampl tree column snippet snippet blurri text column select item anti alias appli time

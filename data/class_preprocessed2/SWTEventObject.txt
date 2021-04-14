@@ -1,1 +1,1 @@
-org eclips swt intern java util eventobject swteventobject eventobject serialversionuid swteventobject object sourc sourc
+org eclips wt intern java util event object wt event object event object serial version id wt event object object sourc sourc

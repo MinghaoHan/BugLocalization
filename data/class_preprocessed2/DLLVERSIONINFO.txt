@@ -1,1 +1,1 @@
-org eclips swt intern win dllversioninfo cbsize dwmajorvers dwminorvers dwbuildnumb dwplatformid sizeof
+org eclips wt intern win dll version info cb size dw major version dw minor version dw build number dw platform id size of

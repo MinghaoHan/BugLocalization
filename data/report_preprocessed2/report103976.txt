@@ -1,1 +1,1 @@
-spinner picki order set valu set individu pain nice method setvalu select minimum maximum digit increment pageincr
+spinner picki order set valu set individu pain nice method set valu select minimum maximum digit increment page increment

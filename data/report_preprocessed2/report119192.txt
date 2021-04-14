@@ -1,1 +1,1 @@
-ccombo respond mousemov mousetrack listen respond control throught displai text button
+combo respond mous move mous track listen respond control throught displai text button

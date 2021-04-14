@@ -1,1 +1,1 @@
-org eclips swt intern win logfont lfheight lfwidth lfescap lforient lfweight lfital lfunderlin lfstrikeout lfcharset lfoutprecis lfclipprecis lfqualiti lfpitchandfamili sizeof o isunicod
+org eclips wt intern win log font lf height lf width lf escap lf orient lf weight lf ital lf underlin lf strikeout lf char set lf out precis lf clip precis lf qualiti lf pitch and famili size of o be unicod

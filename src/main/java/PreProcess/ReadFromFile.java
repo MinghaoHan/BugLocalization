@@ -1,4 +1,4 @@
-package Preprocess;
+package PreProcess;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -72,8 +72,12 @@ public class ReadFromFile {
 
                     comments = PreProcess.lemmatisation(comments);
                     comments = PreProcess.splitter(comments);
+                    comments = PreProcess.lemmatisation(comments);
                     comments = PreProcess.stemming(comments);
-
+                    comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
+                    if(comments.endsWith(" ")){
+                        comments = comments.substring(0,comments.length()-1);
+                    }
                     out.write(comments.getBytes());
 
                 }
@@ -124,8 +128,12 @@ public class ReadFromFile {
                             comments1 = PreProcess.removeKeyWords(comments1);
                             comments1 = PreProcess.lemmatisation(comments1);
                             comments1 = PreProcess.splitter(comments1);
+                            comments1 = PreProcess.lemmatisation(comments1);
                             comments1 = PreProcess.stemming(comments1);
-
+                            comments1 = comments1.replaceAll("\\s+"," ");//多空格替换为单空格
+                            if(comments1.endsWith(" ")){
+                                comments1 = comments1.substring(0,comments.length()-1);
+                            }
                             out.write(comments1.getBytes());
 
 

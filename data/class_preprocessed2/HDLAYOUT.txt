@@ -1,1 +1,1 @@
-org eclips swt intern win hdlayout prc pwpo sizeof
+org eclips wt intern win hd layout prc pw po size of

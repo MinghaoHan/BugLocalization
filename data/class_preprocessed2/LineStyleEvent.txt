@@ -1,1 +1,1 @@
-org eclips swt custom org eclips swt event linestyleev typedev lineoffset start offset string linetext text stylerang style arrai stylerang serialversionuid linestyleev styledtextev lineoffset detail linetext text style style
+org eclips wt custom org eclips wt event line style event type event line offset start offset string line text text style rang style arrai style rang serial version id line style event style text event line offset detail line text text style style

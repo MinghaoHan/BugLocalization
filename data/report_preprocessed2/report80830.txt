@@ -1,1 +1,1 @@
-gtk gc drawfocu simpli draw solid correctli javadoc happend draw focu support limit implement custom widget chanc implement gtk dup point lt span bz close gt lt href bug cgi titl resolv wontfix gc drawfocu linux xor draw gt bug lt gt lt span gt mention file separ
+gtk gc draw focu simpli draw solid correctli java doc happen draw focu support limit implement custom widget chanc implement gtk dup point lt span bz close gt lt href bug cgi titl resolv wont fix gc draw focu linux xor draw gt bug lt gt lt span gt mention file separ

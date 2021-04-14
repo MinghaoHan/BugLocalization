@@ -1,1 +1,1 @@
-org eclips swt event focusadapt focuslisten focusgain focusev focuslost focusev
+org eclips wt event focu adapt focu listen focu gain focu event focu lose focu event

@@ -1,15 +1,17 @@
-package Preprocess;
+package PreProcess;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import edu.stanford.nlp.util.StringUtils;
 import org.tartarus.snowball.ext.PorterStemmer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -66,9 +68,10 @@ public class PreProcess {
         }
 
          */
-        comments = comments.replace("_"," ");
+
         comments = comments.replace("\n"," ");
-        for(int i1 = 0;i1<38;i1++){
+
+        for(int i1 = 0;i1<46;i1++){
             comments = comments.replace(stopWordsList.get(i1)," ");
         }
         comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
@@ -126,7 +129,7 @@ public class PreProcess {
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = null;
             while ((line = in.readLine()) != null) {
-                System.out.println(line);
+                //System.out.println(line);
                 comments = line.replace("][", " ");
                 comments = comments.replace("[", "");
                 comments = comments.replace(",", "");
@@ -154,11 +157,21 @@ public class PreProcess {
 
 
             }
-            splitterLittle(comments);
+            comments = splitterLittle(comments);
             result+=comments;
-
+            result = result.replaceAll("\\s+"," ");//多空格替换为单空格
+            String[] strlist = result.split(" ");
+            for(int i = 0;i<strlist.length;i++){
+                if(strlist[i].length()==1){
+                    strlist[i] = "";
+                }
+            }
+            result = StringUtils.join(strlist," ");
             return result;
 
     }
+
+
+
 
 }

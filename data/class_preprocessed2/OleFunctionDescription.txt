@@ -1,1 +1,1 @@
-org eclips swt ol win olefunctiondescript string oleparameterdescript arg optionalargcount returntyp invokekind funckind flag callingconvent string document string helpfil
+org eclips wt ol win ol function descript string ol paramet descript arg option arg count return type invok kind fun kind flag call convent string document string help file

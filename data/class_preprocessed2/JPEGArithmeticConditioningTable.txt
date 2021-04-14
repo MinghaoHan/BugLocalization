@@ -1,1 +1,1 @@
-org eclips swt intern imag jpegarithmeticconditioningt jpegvariablesizeseg jpegarithmeticconditioningt ledatainputstream bytestream bytestream signatur jpegfileformat dac
+org eclips wt intern imag jpeg arithmet condit tabl jpeg variabl size segment jpeg arithmet condit tabl le datum input stream byte stream byte stream signatur jpeg file format dac

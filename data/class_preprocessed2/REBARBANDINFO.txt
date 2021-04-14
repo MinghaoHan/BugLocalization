@@ -1,1 +1,1 @@
-org eclips swt intern win rebarbandinfo cbsize fmask fstyle clrfore clrback lptext cch iimag hwndchild cxminchild cyminchild cx hbmback wid cychild cymaxchild cyintegr cxideal lparam cxheader sizeof o iswinc
+org eclips wt intern win rebar band info cb size mask style lr fore lr back lp text ch imag nd child cx min child cy min child cx hb back wi cy child cy max child cy integr cx ideal param cx header size of o be winc

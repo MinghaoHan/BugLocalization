@@ -1,1 +1,1 @@
-code javadoc stream close fix place swt accept stream determin correct pattern appli doc
+code java doc stream doesn close fix place wt accept stream determin correct pattern appli doc

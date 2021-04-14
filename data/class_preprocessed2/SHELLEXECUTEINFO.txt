@@ -1,1 +1,1 @@
-org eclips swt intern win shellexecuteinfo cbsize fmask hwnd lpverb lpfile lpparamet lpdirectori nshow hinstapp option member lpidlist lpclass hkeyclass dwhotkei union handl hicon handl hmonitor hicon hprocess sizeof
+org eclips wt intern win shell execut info cb size mask nd lp verb lp file lp paramet lp directori show in st app option member lp id list lp class kei class who kei union handl icon handl monitor icon process size of

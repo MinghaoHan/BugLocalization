@@ -1,1 +1,1 @@
-window dragent event datatyp field set event datatyp arrai carbon gtk motif event datatyp field
+window drag enter event datum type field set event datum type arrai carbon gtk motif event datum type field

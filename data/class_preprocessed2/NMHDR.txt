@@ -1,1 +1,1 @@
-org eclips swt intern win nmhdr hwndfrom idfrom code sizeof
+org eclips wt intern win nm dr nd from id from code size of
