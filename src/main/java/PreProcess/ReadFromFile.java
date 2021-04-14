@@ -113,14 +113,19 @@ public class ReadFromFile {
                 // 读入多个字节到字节数组中，byteread为一次读入的字节数
                 while ((byteread = in.read(tempbytes)) != -1) {
                     String comments = new String(tempbytes);
+                    String comments0 = "";
                     for(int i = 0;i<byteread - 13;i++){
                         if(comments.substring(i,i+7).equals("bug id=")){
                             resultName = "report"+comments.substring(i+8,comments.indexOf("\"",i+8))+".txt";
                             File os = new File(resultPath + resultName);
                             out = new FileOutputStream(os);
                         }
+
+                        if(comments.substring(i,i+9).equals("<summary>")){//title information
+                            comments0 = comments.substring(i+9,comments.indexOf("</summary>",i));
+                        }
                         if(comments.substring(i,i+13).equals("<description>")){
-                            String comments1 = comments.substring(i+13,comments.indexOf("</description>",i));
+                            String comments1 = comments0 + comments.substring(i+13,comments.indexOf("</description>",i));
                             PreProcess.setKeyWordsList(keyWordsList);
                             PreProcess.setStopWordsList(stopWordsList);
                             comments1 = comments1.toLowerCase();

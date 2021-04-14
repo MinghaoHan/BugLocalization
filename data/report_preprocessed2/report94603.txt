@@ -1,1 +1,1 @@
-wt spinner put button text box in set border standard window up down control button in set border
+spinner window standard on wt spinner put button text box in set border standard window up down control button in set border

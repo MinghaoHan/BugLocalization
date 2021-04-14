@@ -1,1 +1,1 @@
-clipboard proxi get fun o gtk select datum set function function copi datum datum valu free o free
+memori leak clipboard proxi get fun clipboard proxi get fun o gtk select datum set function function copi datum datum valu free o free

@@ -1,1 +1,1 @@
-tooltip appear spinner widget spinner set tooltip text
+spinner set tooltip text doesn work no tooltip appear spinner widget spinner set tooltip text
