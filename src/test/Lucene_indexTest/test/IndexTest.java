@@ -23,14 +23,14 @@ public class IndexTest {
         Class.forName("com.mysql.jdbc.Driver");
 
         //一开始必须填一个已经存在的数据库
-        String url = "jdbc:mysql://localhost:3306/sourceFile";
+        String url = "jdbc:mysql://106.15.88.231:3306/sourceFile";
         Connection conn = DriverManager.getConnection(url, "root", "Hmh08715"); //修改成自己的账号密码
         Statement stat = conn.createStatement();
 
         int lastID=0;
 
         //添加数据
-        File file = new File("data/class_preprocessed/");
+        File file = new File("data/class_preprocessed2/");
         boolean flag= file.exists();
         File[] fs = file.listFiles();
         List<String> files = new ArrayList<String>();

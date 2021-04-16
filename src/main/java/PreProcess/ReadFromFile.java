@@ -200,7 +200,7 @@ public class ReadFromFile {
         }
     }
 
-    public static void main(String[] args) {
+    public static void getResult() {
         String path1 = "data\\swt-3.1";
 
         String path2 = "data\\SWTBugRepository.xml";

@@ -76,6 +76,7 @@ public class BugLocator {
                 String name_temp = res.get(j).getKey();
                 String v_temp = String.valueOf(res.get(j).getValue());
 
+                if(Double.valueOf(v_temp)<0.0001) break;                //相似度小于0.0001，认为无关，不做记录
                 writeIn(name,name_temp,v_temp);
                 System.out.println(String.format("%-40s",name_temp)+"  "+v_temp);
             }

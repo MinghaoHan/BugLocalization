@@ -1,0 +1,1 @@
+org eclips wt graphic org eclips wt intern win gc datum devic devic style imag imag foreground background pen line width dash brush font null bitmap nd paint struct layout alpha xff dip graphic gdi ppen dip brush pattern foreground pattern pattern background pattern
