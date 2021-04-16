@@ -191,6 +191,7 @@ public class ReadFromFile {
     /**
      * 显示输入流中还剩的字节数
      */
+
     private static void showAvailableBytes(InputStream in) {
         try {
 
@@ -215,4 +216,5 @@ public class ReadFromFile {
         ReadFromFile.readBugFile(path2,"data/report_preprocessed2/");
 
     }
+
 }
