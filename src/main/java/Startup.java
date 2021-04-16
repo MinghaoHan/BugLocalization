@@ -1,5 +1,4 @@
 import BugLocator.BugLocator;
-import Lucene_index.IndexCreate.CreateIndexDaoImpl;
 import PreProcess.ReadFromFile;
 import jxl.write.WriteException;
 import lib.BugReporter;
