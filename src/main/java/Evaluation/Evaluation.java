@@ -90,6 +90,82 @@ public class Evaluation {
         return false;
     }
 
+    public Double MRR_Cal(String bug_id) throws IOException {
+        String[] fixFile = getFixed(bug_id);
+        int mrr=0;
+
+        if(fixFile==null) return 0.000000001;
+
+        try{
+            Statement stmt = con.createStatement();
+
+            String tmp_bug = "report"+bug_id+".txt";
+            String sql= "select sourcefile from vsm where bug = '" +tmp_bug +"' Order by sim DESC;";
+            ResultSet rs = ((Statement) stmt).executeQuery(sql);
+
+            boolean flag=true;
+            while(flag&&rs.next()){
+                String tempSF = rs.getString("sourcefile");
+                mrr++;
+                for(String tmp:fixFile){
+                    if(tempSF.equals(tmp)) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+
+            return 1.0/mrr;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }finally{
+            logger.info("report"+bug_id+" : MRR");
+        }
+
+        return 0.0000001;
+    }
+
+    public Double MAP_Cal(String bug_id) throws IOException {
+        Boolean res = false;
+        String[] fixFile = getFixed(bug_id);
+        Double isRelevant=0.0;
+        int fixNum = fixFile.length;
+
+        if(fixFile==null) return 0.000000001;
+
+        try{
+            Statement stmt = con.createStatement();
+
+            String tmp_bug = "report"+bug_id+".txt";
+            String sql= "select sourcefile from vsm where bug = '" +tmp_bug +"' Order by sim DESC;";
+            ResultSet rs = ((Statement) stmt).executeQuery(sql);
+
+            int i=0;
+            int num=0;
+            while(i<fixNum && rs.next()){
+                num++;
+                String tempSF = rs.getString("sourcefile");
+                for(String tmp:fixFile){
+                    if(tempSF.equals(tmp)) {
+                        i++;
+                        isRelevant+=Double.valueOf(i)/num;
+                        break;
+                    }
+                }
+            }
+
+            return Double.valueOf(isRelevant)/fixNum;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }finally{
+            logger.info("report"+bug_id+" : MAP");
+        }
+
+        return 0.0000001;
+    }
+
     public static void main(String[] args) throws IOException {
         File file = new File("data/report_preprocessed2/");
         File[] bugFiles = file.listFiles();
@@ -103,18 +179,29 @@ public class Evaluation {
             }
         }
 
-        int topK = 10;
+        int topK = 1;
         Evaluation e = new Evaluation(topK);
 
-        //Todo:计算TopK
         int num=0;
         int TopKKK=0;
+        Double rank_sum=0.0;
+        Double MMap = 0.0;
+
         for(String bug_id:names) {
             if(e.TopK(bug_id))
                 TopKKK++;
+
+            rank_sum+=e.MRR_Cal(bug_id);
+            MMap +=e.MAP_Cal(bug_id);
             num++;
         }
+
         System.out.println("Top@"+topK+":"+Double.valueOf(TopKKK)/num);
+
+        System.out.println("MRR  : "+rank_sum/num);
+
+        System.out.println("MAP  : "+MMap/num);
+
     }
 
 }
