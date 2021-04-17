@@ -1,4 +1,4 @@
-package PreProcess;
+package Preprocess;
 
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
@@ -16,24 +16,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class PreProcess {
+public class preprocess {
 
 
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
 
-    public PreProcess(String comments){
+    public preprocess(String comments){
 
         removeStopWords(comments);
         removeKeyWords(comments);
     }
 
     public static void setKeyWordsList(List<String> keyWordsList) {
-        PreProcess.keyWordsList = keyWordsList;
+        preprocess.keyWordsList = keyWordsList;
     }
 
     public static void setStopWordsList(List<String> stopWordsList) {
-        PreProcess.stopWordsList = stopWordsList;
+        preprocess.stopWordsList = stopWordsList;
     }
 
     public static String removeKeyWords(String comments){

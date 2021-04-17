@@ -1,4 +1,6 @@
-package PreProcess;
+package Preprocess;
+
+import Preprocess.preprocess;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,8 +8,8 @@ import java.util.List;
 
 public class ReadFromFile {
 
-    static List<String> keyWordsList = new ArrayList<String>();
-    static List<String> stopWordsList = new ArrayList<String>();
+    static List<String> keyWordsList = new ArrayList<>();
+    static List<String> stopWordsList = new ArrayList<>();
 
     public static void setStopWordsList(List<String> stopWordsList) {
         ReadFromFile.stopWordsList = stopWordsList;
@@ -64,16 +66,16 @@ public class ReadFromFile {
                     //System.out.write(tempbytes, 0, byteread);
                     String comments = new String(tempbytes);
 
-                    PreProcess.setKeyWordsList(keyWordsList);
-                    PreProcess.setStopWordsList(stopWordsList);
+                    preprocess.setKeyWordsList(keyWordsList);
+                    preprocess.setStopWordsList(stopWordsList);
                     comments = comments.toLowerCase();
-                    comments = PreProcess.removeStopWords(comments);
-                    comments = PreProcess.removeKeyWords(comments);
+                    comments = preprocess.removeStopWords(comments);
+                    comments = preprocess.removeKeyWords(comments);
 
-                    comments = PreProcess.lemmatisation(comments);
-                    comments = PreProcess.splitter(comments);
-                    comments = PreProcess.lemmatisation(comments);
-                    comments = PreProcess.stemming(comments);
+                    comments = preprocess.lemmatisation(comments);
+                    comments = preprocess.splitter(comments);
+                    comments = preprocess.lemmatisation(comments);
+                    comments = preprocess.stemming(comments);
                     comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
                     if(comments.endsWith(" ")){
                         comments = comments.substring(0,comments.length()-1);
@@ -126,15 +128,15 @@ public class ReadFromFile {
                         }
                         if(comments.substring(i,i+13).equals("<description>")){
                             String comments1 = comments0 + comments.substring(i+13,comments.indexOf("</description>",i));
-                            PreProcess.setKeyWordsList(keyWordsList);
-                            PreProcess.setStopWordsList(stopWordsList);
+                            preprocess.setKeyWordsList(keyWordsList);
+                            preprocess.setStopWordsList(stopWordsList);
                             comments1 = comments1.toLowerCase();
-                            comments1 = PreProcess.removeStopWords(comments1);
-                            comments1 = PreProcess.removeKeyWords(comments1);
-                            comments1 = PreProcess.lemmatisation(comments1);
-                            comments1 = PreProcess.splitter(comments1);
-                            comments1 = PreProcess.lemmatisation(comments1);
-                            comments1 = PreProcess.stemming(comments1);
+                            comments1 = preprocess.removeStopWords(comments1);
+                            comments1 = preprocess.removeKeyWords(comments1);
+                            comments1 = preprocess.lemmatisation(comments1);
+                            comments1 = preprocess.splitter(comments1);
+                            comments1 = preprocess.lemmatisation(comments1);
+                            comments1 = preprocess.stemming(comments1);
                             comments1 = comments1.replaceAll("\\s+"," ");//多空格替换为单空格
                             if(comments1.endsWith(" ")){
                                 comments1 = comments1.substring(0,comments.length()-1);
