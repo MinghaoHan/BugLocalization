@@ -5,36 +5,35 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
+import edu.stanford.nlp.util.StringUtils;
 import org.tartarus.snowball.ext.PorterStemmer;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class PreProcess {
+public class preprocess {
 
 
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
 
-
-
-
-    public PreProcess(String comments){
+    public preprocess(String comments){
 
         removeStopWords(comments);
         removeKeyWords(comments);
     }
 
     public static void setKeyWordsList(List<String> keyWordsList) {
-        PreProcess.keyWordsList = keyWordsList;
+        preprocess.keyWordsList = keyWordsList;
     }
 
     public static void setStopWordsList(List<String> stopWordsList) {
-        PreProcess.stopWordsList = stopWordsList;
+        preprocess.stopWordsList = stopWordsList;
     }
 
     public static String removeKeyWords(String comments){
@@ -69,9 +68,10 @@ public class PreProcess {
         }
 
          */
-        comments = comments.replace("_"," ");
+
         comments = comments.replace("\n"," ");
-        for(int i1 = 0;i1<38;i1++){
+
+        for(int i1 = 0;i1<46;i1++){
             comments = comments.replace(stopWordsList.get(i1)," ");
         }
         comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
@@ -121,61 +121,59 @@ public class PreProcess {
         }
         return result.substring(0,result.length()-1);
     }
-
-    public static String splitter(String comments) {
+    public static String splitterLittle(String comments){
         try {
+            File directory = new File("");
 
-            String result = "";
-            while(comments.length()>20000){
-                String comments1 = comments.substring(0,comments.indexOf(" ",10000));
-                String[] args = new String[] { "python", "D:\\splitter.py", comments1 };
-                Process proc = Runtime.getRuntime().exec(args);// 执行py文件
-
-                BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-                String line = null;
-                while ((line = in.readLine()) != null) {
-                    //System.out.println(line);
-                    comments1 = line.replace("]["," ");
-                    comments1 = comments1.replace("[","");
-                    comments1 = comments1.replace(",","");
-                    comments1 = comments1.replace("]","");
-                    comments1 = comments1.replace("\'","");
-                }
-                result+=comments1;
-                comments = comments.substring(comments.indexOf(" ",10000)+1);
-                in.close();
-                proc.waitFor();
-
-            }
-            String[] args = new String[] { "python", "D:\\splitter.py", comments };
+            String path = directory.getAbsolutePath()+"\\src\\main\\java\\PreProcess\\splitter.py";
+            String[] args = new String[]{"python", path, comments};
             Process proc = Runtime.getRuntime().exec(args);// 执行py文件
 
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = null;
             while ((line = in.readLine()) != null) {
                 //System.out.println(line);
-                comments = line.replace("]["," ");
-                comments = comments.replace("[","");
-                comments = comments.replace(",","");
-                comments = comments.replace("]","");
-                comments = comments.replace("\'","");
+                comments = line.replace("][", " ");
+                comments = comments.replace("[", "");
+                comments = comments.replace(",", "");
+                comments = comments.replace("]", "");
+                comments = comments.replace("\'", "");
             }
-            result+=comments;
             in.close();
             proc.waitFor();
-            return result;
-        } catch (IOException e) {
+            return comments;
+        }catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-
         }
-    return "";
+        return "";
+
+    }
+    public static String splitter(String comments) {
+
+
+            String result = "";
+            while(comments.length()>20000){
+                String comments1 = comments.substring(0,comments.indexOf(" ",10000));
+                splitterLittle(comments1);
+                result+=comments1;
+                comments = comments.substring(comments.indexOf(" ",10000)+1);
+
+
+            }
+            comments = splitterLittle(comments);
+            result+=comments;
+            result = result.replaceAll("\\s+"," ");//多空格替换为单空格
+            String[] strlist = result.split(" ");
+            for(int i = 0;i<strlist.length;i++){
+                if(strlist[i].length()==1){
+                    strlist[i] = "";
+                }
+            }
+            result = StringUtils.join(strlist," ");
+            return result;
+
     }
 
+
+
 }
-
-
-
-
-
