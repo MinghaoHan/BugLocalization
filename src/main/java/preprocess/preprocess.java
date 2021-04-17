@@ -9,6 +9,7 @@ import edu.stanford.nlp.util.StringUtils;
 import org.tartarus.snowball.ext.PorterStemmer;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -122,7 +123,10 @@ public class PreProcess {
     }
     public static String splitterLittle(String comments){
         try {
-            String[] args = new String[]{"python", "D:\\splitter.py", comments};
+            File directory = new File("");
+
+            String path = directory.getAbsolutePath()+"\\src\\main\\java\\PreProcess\\splitter.py";
+            String[] args = new String[]{"python", path, comments};
             Process proc = Runtime.getRuntime().exec(args);// 执行py文件
 
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
@@ -169,7 +173,6 @@ public class PreProcess {
             return result;
 
     }
-
 
 
 
