@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class Startup {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException, WriteException {
-        ReadFromFile.getResult();
+//        ReadFromFile.getResult();
         Sources ss = new Sources("data/class_preprocessed2/");
         BugReporter bugs = new BugReporter("data/report_preprocessed2/");
 
