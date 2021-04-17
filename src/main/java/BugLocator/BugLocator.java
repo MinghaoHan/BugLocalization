@@ -29,11 +29,13 @@ public class BugLocator {
     private BugReporter bugs;
     private Sources ss;
     private String RankList;
+    private int en;
 
-    public BugLocator(BugReporter bugs, Sources ss, String ListPath) throws SQLException {
+    public BugLocator(BugReporter bugs, Sources ss, String ListPath,int en) throws SQLException {
         this.bugs = bugs;
         this.ss = ss;
         this.RankList = ListPath;
+        this.en = en;
         sysoutStrTablePdmCloumns();
     }
 
