@@ -22,10 +22,19 @@ public class PreProcess {
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
 
-    public PreProcess(String comments){
+    public static String completePreProcess(String comments){
 
-        removeStopWords(comments);
-        removeKeyWords(comments);
+        comments = removeStopWords(comments);
+        comments = removeKeyWords(comments);
+        comments = lemmatisation(comments);
+        comments = splitter(comments);
+        comments = lemmatisation(comments);
+        comments = stemming(comments);
+        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
+        if(comments.endsWith(" ")){
+            comments = comments.substring(0,comments.length()-1);
+        }
+        return  comments;
     }
 
     public static void setKeyWordsList(List<String> keyWordsList) {
@@ -34,22 +43,6 @@ public class PreProcess {
 
     public static void setStopWordsList(List<String> stopWordsList) {
         PreProcess.stopWordsList = stopWordsList;
-    }
-
-    public static String removeKeyWords(String comments){
-        String[] commentsList = comments.split(" ");
-        for(String str1 : keyWordsList){
-            for(int i3 = 0;i3<commentsList.length;i3++){
-                if(str1.equals(commentsList[i3])){
-                    commentsList[i3] = "";
-                }
-            }
-
-        }
-        comments = String.join(" ",commentsList);
-        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
-        comments = comments.trim();
-        return comments;
     }
     public static String removeStopWords(String comments){
         int i = comments.indexOf("/*");
@@ -88,6 +81,22 @@ public class PreProcess {
         comments = String.join(" ",commentsList);
         return comments;
     }
+    public static String removeKeyWords(String comments){
+        String[] commentsList = comments.split(" ");
+        for(String str1 : keyWordsList){
+            for(int i3 = 0;i3<commentsList.length;i3++){
+                if(str1.equals(commentsList[i3])){
+                    commentsList[i3] = "";
+                }
+            }
+
+        }
+        comments = String.join(" ",commentsList);
+        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
+        comments = comments.trim();
+        return comments;
+    }
+
 
     public static String lemmatisation(String comments){
         Properties props = new Properties();  // set up pipeline properties

@@ -8,7 +8,7 @@ public class ReadFromFile {
 
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
-
+    PreProcess p;
     public static void setStopWordsList(List<String> stopWordsList) {
         ReadFromFile.stopWordsList = stopWordsList;
     }
@@ -64,20 +64,8 @@ public class ReadFromFile {
                     //System.out.write(tempbytes, 0, byteread);
                     String comments = new String(tempbytes);
 
-                    PreProcess.setKeyWordsList(keyWordsList);
-                    PreProcess.setStopWordsList(stopWordsList);
-                    comments = comments.toLowerCase();
-                    comments = PreProcess.removeStopWords(comments);
-                    comments = PreProcess.removeKeyWords(comments);
+                    comments = getResultString(comments);
 
-                    comments = PreProcess.lemmatisation(comments);
-                    comments = PreProcess.splitter(comments);
-                    comments = PreProcess.lemmatisation(comments);
-                    comments = PreProcess.stemming(comments);
-                    comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
-                    if(comments.endsWith(" ")){
-                        comments = comments.substring(0,comments.length()-1);
-                    }
                     out.write(comments.getBytes());
 
                 }
@@ -93,6 +81,9 @@ public class ReadFromFile {
             }
         }
     }
+
+
+
     public static void readBugFile(String fileName,String resultPath) {
 
         int docIndex = fileName.lastIndexOf(".");
@@ -126,19 +117,8 @@ public class ReadFromFile {
                         }
                         if(comments.substring(i,i+13).equals("<description>")){
                             String comments1 = comments0 + comments.substring(i+13,comments.indexOf("</description>",i));
-                            PreProcess.setKeyWordsList(keyWordsList);
-                            PreProcess.setStopWordsList(stopWordsList);
-                            comments1 = comments1.toLowerCase();
-                            comments1 = PreProcess.removeStopWords(comments1);
-                            comments1 = PreProcess.removeKeyWords(comments1);
-                            comments1 = PreProcess.lemmatisation(comments1);
-                            comments1 = PreProcess.splitter(comments1);
-                            comments1 = PreProcess.lemmatisation(comments1);
-                            comments1 = PreProcess.stemming(comments1);
-                            comments1 = comments1.replaceAll("\\s+"," ");//多空格替换为单空格
-                            if(comments1.endsWith(" ")){
-                                comments1 = comments1.substring(0,comments.length()-1);
-                            }
+                            comments1 = getResultString(comments1);
+
                             out.write(comments1.getBytes());
 
 
@@ -200,7 +180,13 @@ public class ReadFromFile {
             e.printStackTrace();
         }
     }
-
+    private static String getResultString(String comments) {
+        PreProcess.setKeyWordsList(keyWordsList);
+        PreProcess.setStopWordsList(stopWordsList);
+        comments = comments.toLowerCase();
+        comments = PreProcess.completePreProcess(comments);
+        return comments;
+    }
     public static void getResult() {
         String path1 = "data\\swt-3.1";
 
