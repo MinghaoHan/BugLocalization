@@ -44,6 +44,22 @@ public class PreProcess {
     public static void setStopWordsList(List<String> stopWordsList) {
         PreProcess.stopWordsList = stopWordsList;
     }
+
+    public static String removeKeyWords(String comments){
+        String[] commentsList = comments.split(" ");
+        for(String str1 : keyWordsList){
+            for(int i3 = 0;i3<commentsList.length;i3++){
+                if(str1.equals(commentsList[i3])){
+                    commentsList[i3] = "";
+                }
+            }
+
+        }
+        comments = String.join(" ",commentsList);
+        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
+        comments = comments.trim();
+        return comments;
+    }
     public static String removeStopWords(String comments){
         int i = comments.indexOf("/*");
 
@@ -81,22 +97,6 @@ public class PreProcess {
         comments = String.join(" ",commentsList);
         return comments;
     }
-    public static String removeKeyWords(String comments){
-        String[] commentsList = comments.split(" ");
-        for(String str1 : keyWordsList){
-            for(int i3 = 0;i3<commentsList.length;i3++){
-                if(str1.equals(commentsList[i3])){
-                    commentsList[i3] = "";
-                }
-            }
-
-        }
-        comments = String.join(" ",commentsList);
-        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
-        comments = comments.trim();
-        return comments;
-    }
-
 
     public static String lemmatisation(String comments){
         Properties props = new Properties();  // set up pipeline properties
