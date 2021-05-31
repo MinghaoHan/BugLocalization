@@ -1,4 +1,4 @@
-package Lucene_index.IndexCreate;
+package com.nobug.backend.Lucene_index.IndexCreate;
 
 import java.sql.SQLException;
 

@@ -1,6 +1,6 @@
-package Lucene_index.Dao;
+package com.nobug.backend.Lucene_index.Dao;
 
-import Lucene_index.Pojo.SourceFile;
+import com.nobug.backend.Lucene_index.Pojo.SourceFile;
 
 import java.util.List;
 

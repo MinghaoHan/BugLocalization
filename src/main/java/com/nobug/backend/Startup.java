@@ -1,3 +1,5 @@
+
+/*
 import BugLocator.BugLocator;
 import Lucene_index.IndexCreate.CreateIndexDaoImpl;
 import Preprocess.ReadFromFile;
@@ -20,3 +22,4 @@ public class Startup {
         bugLocator.bugLocator();
     }
 }
+*/

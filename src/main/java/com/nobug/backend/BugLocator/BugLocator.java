@@ -1,13 +1,13 @@
-package BugLocator;
+package com.nobug.backend.BugLocator;
 
-import Models.VectorSpaceModel;
+import com.nobug.backend.Models.VectorSpaceModel;
 import jxl.Workbook;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
-import lib.BugReporter;
-import lib.Sources;
+import com.nobug.backend.lib.BugReporter;
+import com.nobug.backend.lib.Sources;
 
 import java.io.File;
 import java.io.IOException;

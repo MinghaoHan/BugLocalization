@@ -1,6 +1,6 @@
-package lib;
+package com.nobug.backend.lib;
 
-import Lucene_index.Pojo.SourceFile;
+import com.nobug.backend.Lucene_index.Pojo.SourceFile;
 
 import java.util.List;
 

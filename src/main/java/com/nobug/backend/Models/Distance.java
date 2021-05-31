@@ -1,4 +1,4 @@
-package Models;
+package com.nobug.backend.Models;
 
 import java.text.DecimalFormat;
 import java.util.Vector;

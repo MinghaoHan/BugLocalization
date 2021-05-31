@@ -1,4 +1,4 @@
-package lib;
+package com.nobug.backend.lib;
 
 public class BugReporter {
     private String path;

@@ -1,4 +1,4 @@
-package Evaluation;
+package com.nobug.backend.Evaluation;
 
 import java.io.File;
 import java.io.FileInputStream;

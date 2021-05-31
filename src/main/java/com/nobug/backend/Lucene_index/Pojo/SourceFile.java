@@ -1,4 +1,4 @@
-package Lucene_index.Pojo;
+package com.nobug.backend.Lucene_index.Pojo;
 
 import java.util.Map;
 

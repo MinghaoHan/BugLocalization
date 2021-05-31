@@ -1,4 +1,4 @@
-package query;
+package com.nobug.backend.query;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

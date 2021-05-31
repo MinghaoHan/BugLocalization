@@ -1,6 +1,4 @@
-package Preprocess;
-
-import Preprocess.preprocess;
+package com.nobug.backend.Preprocess;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
-package Lucene_index.IndexCreate;
+package com.nobug.backend.Lucene_index.IndexCreate;
 
 
-import lib.Sources;
-import query.query;
-import query.wordMap;
+import com.nobug.backend.lib.Sources;
+import com.nobug.backend.query.query;
+import com.nobug.backend.query.wordMap;
 
 import java.io.File;
 import java.sql.*;

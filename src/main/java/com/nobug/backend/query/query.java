@@ -1,4 +1,4 @@
-package query;
+package com.nobug.backend.query;
 
 import java.util.ArrayList;
 import java.util.List;

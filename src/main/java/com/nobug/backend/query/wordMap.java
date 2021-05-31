@@ -1,4 +1,4 @@
-package query;
+package com.nobug.backend.query;
 
 import java.util.HashMap;
 import java.util.Map;

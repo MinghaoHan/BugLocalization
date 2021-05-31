@@ -1,7 +1,7 @@
-package Models;
+package com.nobug.backend.Models;
 
-import query.query;
-import query.wordMap;
+import com.nobug.backend.query.query;
+import com.nobug.backend.query.wordMap;
 
 import java.io.File;
 import java.text.DecimalFormat;
