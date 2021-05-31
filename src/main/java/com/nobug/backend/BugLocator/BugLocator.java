@@ -51,6 +51,34 @@ public class BugLocator {
         this.con = con;
     }
 
+    public Vector<Pair<String, Float>> twentySort(Vector<Pair<String, Float>> v) {
+        // 按Float排序
+        // 保留20个
+        Vector<Pair<String, Float>> sortedVec = new Vector<>();
+
+        int length = v.size();
+        if (length > 20) length = 20;
+
+        for (int i = 0; i < length; ++i) {
+
+            int maxIndex = 0;
+            for (int j = 1; j < v.size(); ++j) {
+                float x = v.get(j).getValue(), y = v.get(maxIndex).getValue();
+                if (x > y)
+                    maxIndex = j;
+            }
+
+            Pair<String, Float> pair = v.get(maxIndex);
+            v.remove(maxIndex);
+
+            sortedVec.add(pair);
+
+        }
+
+        return sortedVec;
+    }
+
+
     public Vector<Pair<String, Vector<Pair<String, Float>>>> getFileList() throws SQLException{
         Vector<Pair<String, Vector<Pair<String, Float>>>> fileList = new Vector<>();
 
@@ -74,7 +102,7 @@ public class BugLocator {
 
                 if (!bugname.equals(filename)) {
                     if (!filename.equals("")) {
-                        Pair<String, Vector<Pair<String, Float>>> oneFileSet = new Pair<>(filename, similars);
+                        Pair<String, Vector<Pair<String, Float>>> oneFileSet = new Pair<>(filename, twentySort(similars));
                         fileList.add(oneFileSet);
                     }
                     filename = bugname;
