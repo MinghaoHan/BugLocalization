@@ -1,8 +1,8 @@
 package Lucene_indexTest.test;
 
-import Lucene_index.Pojo.SourceFile;
+import com.nobug.backend.Lucene_index.Pojo.SourceFile;
 import org.junit.Test;
-import query.query;
+import com.nobug.backend.query.query;
 
 import java.io.File;
 import java.sql.Connection;
@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.*;
 
-import query.wordMap;
+import com.nobug.backend.query.wordMap;
 
 public class IndexTest {
 

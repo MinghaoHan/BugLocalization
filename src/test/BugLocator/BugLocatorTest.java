@@ -1,6 +1,6 @@
 package BugLocator;
 
-import Lucene_index.Pojo.SourceFile;
+import com.nobug.backend.Lucene_index.Pojo.SourceFile;
 import org.junit.Test;
 
 import java.io.File;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import BugLocator.BugLocator;
+import com.nobug.backend.BugLocator.BugLocator;
 
 
 public class BugLocatorTest {

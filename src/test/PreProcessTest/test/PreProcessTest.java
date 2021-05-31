@@ -1,7 +1,7 @@
 package PreProcessTest.test;
 
-import Preprocess.preprocess;
-import Preprocess.ReadFromFile;
+import com.nobug.backend.Preprocess.preprocess;
+import com.nobug.backend.Preprocess.ReadFromFile;
 import org.junit.Assert;
 import org.junit.Test;
 
