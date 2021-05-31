@@ -1,16 +1,25 @@
 package com.nobug.backend;
 
+import com.nobug.backend.BugLocator.BugLocator;
+import com.nobug.backend.lib.BugReporter;
+import com.nobug.backend.lib.Sources;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.IOException;
+import java.sql.SQLException;
+import jxl.write.WriteException;
 
-/**
- * spring-boot startup
- *
- */
 @SpringBootApplication
 public class SpringBootStartup
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, IOException, WriteException {
+
+//        Sources ss = new Sources("data/class_preprocessed2/");
+//        BugReporter bugs = new BugReporter("data/report_preprocessed3");
+//
+//        BugLocator bugLocator = new BugLocator(bugs,ss,"data/RankList3.xls",0);
+//        bugLocator.bugLocator();
+
         SpringApplication.run(SpringBootStartup.class, args);
     }
 }

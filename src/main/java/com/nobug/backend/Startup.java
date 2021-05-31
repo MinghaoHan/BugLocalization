@@ -1,11 +1,12 @@
-
 /*
-import BugLocator.BugLocator;
-import Lucene_index.IndexCreate.CreateIndexDaoImpl;
-import Preprocess.ReadFromFile;
+package com.nobug.backend;
+
+import com.nobug.backend.BugLocator.BugLocator;
+import com.nobug.backend.Lucene_index.IndexCreate.CreateIndexDaoImpl;
+import com.nobug.backend.Preprocess.ReadFromFile;
 import jxl.write.WriteException;
-import lib.BugReporter;
-import lib.Sources;
+import com.nobug.backend.lib.BugReporter;
+import com.nobug.backend.lib.Sources;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,4 +23,5 @@ public class Startup {
         bugLocator.bugLocator();
     }
 }
+
 */

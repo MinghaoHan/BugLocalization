@@ -1,6 +1,7 @@
 package com.nobug.backend.BugLocator;
 
 import com.nobug.backend.Models.VectorSpaceModel;
+import javafx.util.Pair;
 import jxl.Workbook;
 import jxl.write.Label;
 import jxl.write.WritableSheet;
@@ -49,6 +50,43 @@ public class BugLocator {
         }
         this.con = con;
     }
+
+    public Vector<Pair<String, List<Map.Entry<String, Double>>>> getFileList() {
+        Vector<Pair<String, List<Map.Entry<String, Double>>>> fileList = new Vector<>();
+
+        File file = new File(bugs.getPath());
+        File[] bugFiles = file.listFiles();
+        List<String> files = new ArrayList<String>();
+        List<String> names = new ArrayList<String>();
+        for(File f:bugFiles){
+            if(!f.isDirectory()) {
+                files.add(f.getAbsolutePath());
+                names.add(f.getName());
+            }
+        }
+
+        //遍历每一个bug文件
+        for(int i=0;i<files.size();i++) {
+            String name = names.get(i);
+            String path = files.get(i);
+
+            //VSM，排序，打印
+            List<Map.Entry<String, Double>> res = bugSort(path);
+            for(int j=0;j<res.size();j++){
+                String name_temp = res.get(j).getKey();
+                String v_temp = String.valueOf(res.get(j).getValue());
+
+                if(Double.valueOf(v_temp)<0.0001) break;                //相似度小于0.0001，认为无关，不做记录
+            }
+
+            Pair<String, List<Map.Entry<String, Double>>> pair = new Pair<>(name, res);
+            fileList.add(pair);
+
+        }
+
+        return fileList;
+    }
+
 
     public void bugLocator() throws IOException, WriteException {
         File file = new File(bugs.getPath());
