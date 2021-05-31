@@ -1,5 +1,6 @@
 package com.nobug.backend.Controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,8 +13,10 @@ import java.io.InputStreamReader;
 @RestController
 public class FileContentController {
 
+    @CrossOrigin
     @RequestMapping("/getContentByName")
     public String getFileContent(@RequestParam String name) {
+        System.out.println(name);
         String fileName = "data/class_preprocessed2/" + name;
         StringBuilder text = new StringBuilder();
         try {
@@ -27,6 +30,7 @@ public class FileContentController {
         catch (IOException e) {
             text.append("file not found");
         }
+        System.out.println(text.toString());
         return text.toString();
     }
 

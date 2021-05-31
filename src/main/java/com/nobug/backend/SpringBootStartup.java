@@ -15,7 +15,7 @@ public class SpringBootStartup
     public static void main(String[] args) throws SQLException, IOException, WriteException {
 
 //        Sources ss = new Sources("data/class_preprocessed2/");
-//        BugReporter bugs = new BugReporter("data/report_preprocessed3");
+//        BugReporter bugs = new BugReporter("data/report_preprocessed2");
 //
 //        BugLocator bugLocator = new BugLocator(bugs,ss,"data/RankList3.xls",0);
 //        bugLocator.bugLocator();
