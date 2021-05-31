@@ -51,39 +51,44 @@ public class BugLocator {
         this.con = con;
     }
 
-    public Vector<Pair<String, List<Map.Entry<String, Double>>>> getFileList() {
-        Vector<Pair<String, List<Map.Entry<String, Double>>>> fileList = new Vector<>();
+    public Vector<Pair<String, Vector<Pair<String, Float>>>> getFileList() throws SQLException{
+        Vector<Pair<String, Vector<Pair<String, Float>>>> fileList = new Vector<>();
 
-        File file = new File(bugs.getPath());
-        File[] bugFiles = file.listFiles();
-        List<String> files = new ArrayList<String>();
-        List<String> names = new ArrayList<String>();
-        for(File f:bugFiles){
-            if(!f.isDirectory()) {
-                files.add(f.getAbsolutePath());
-                names.add(f.getName());
+        String filename = "";
+        Vector<Pair<String, Float>> similars = new Vector<>();
+
+        getConnection();
+        try{
+            Statement stmt = con.createStatement();
+
+            String sql= "select * from vsm";
+            ResultSet rs = ((Statement) stmt).executeQuery(sql);
+
+            while (rs.next()){
+
+                String bugname = rs.getString("bug");
+                String sourcename = rs.getString("sourcefile");
+                float sim = rs.getFloat("sim");
+
+                Pair<String, Float> oneSimilarFile = new Pair<String, Float>(sourcename, sim);
+
+                if (!bugname.equals(filename)) {
+                    if (!filename.equals("")) {
+                        Pair<String, Vector<Pair<String, Float>>> oneFileSet = new Pair<>(filename, similars);
+                        fileList.add(oneFileSet);
+                    }
+                    filename = bugname;
+                    similars.clear();
+                }
+                similars.add(oneSimilarFile);
+
             }
         }
-
-        //遍历每一个bug文件
-        for(int i=0;i<files.size();i++) {
-            String name = names.get(i);
-            String path = files.get(i);
-
-            //VSM，排序，打印
-            List<Map.Entry<String, Double>> res = bugSort(path);
-            for(int j=0;j<res.size();j++){
-                String name_temp = res.get(j).getKey();
-                String v_temp = String.valueOf(res.get(j).getValue());
-
-                if(Double.valueOf(v_temp)<0.0001) break;                //相似度小于0.0001，认为无关，不做记录
-            }
-
-            Pair<String, List<Map.Entry<String, Double>>> pair = new Pair<>(name, res);
-            fileList.add(pair);
-
+        catch (SQLException e){
+            e.printStackTrace();
+        }finally{
+            this.con.close();
         }
-
         return fileList;
     }
 

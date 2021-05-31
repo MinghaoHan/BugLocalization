@@ -20,7 +20,7 @@ public class FileListController {
 
     @CrossOrigin
     @RequestMapping("/getFileList")
-    public Vector<Pair<String, List<Map.Entry<String, Double>>>> getName() throws SQLException, IOException, WriteException {
+    public Vector<Pair<String, Vector<Pair<String, Float>>>> getName() throws SQLException, IOException, WriteException {
         System.out.println("getting filelist");
         Sources ss = new Sources("data/class_preprocessed2/");
         BugReporter bugs = new BugReporter("data/report_preprocessed3");
