@@ -223,7 +223,7 @@ public class BugLocator {
             }
 
             //Todo: 在这里加入相似度模型，VSM等
-            SourceSort.put(filename, new VectorSpaceModel().calculate(ss.getPath(),filename,wordSF,bugPath));
+            SourceSort.put(filename, new VectorSpaceModel("VSM").calculate(ss.getPath(),filename,wordSF,bugPath));
         }
 
         //根据value，降序排列

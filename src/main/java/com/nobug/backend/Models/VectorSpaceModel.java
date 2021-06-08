@@ -2,6 +2,7 @@ package com.nobug.backend.Models;
 
 import com.nobug.backend.query.query;
 import com.nobug.backend.query.wordMap;
+import com.nobug.backend.Models.Distance;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -18,6 +19,10 @@ public class VectorSpaceModel {
      * @return
      */
 
+    String Model = "VSM";
+    public VectorSpaceModel(String a){
+        this.Model=a;
+    }
 
     public double calculate(String path, String filename, Map<String, Double> doc1, String doc2Path){
         DecimalFormat df = new DecimalFormat("#00.0000");
@@ -76,16 +81,15 @@ public class VectorSpaceModel {
             }
         }
 
-        Double v1_sum=0.0;
-        Double v2_sum=0.0;
-        Double v1Dotv2=0.0;
+        Distance distance = new Distance(v1,v2);
 
-        for(int i=0;i<v1.size();i++){
-            v1Dotv2 += v1.get(i)*v2.get(i);
-            v1_sum += v1.get(i)*v1.get(i);
-            v2_sum += v2.get(i)*v2.get(i);
-        }
-
-        return Double.valueOf(df.format(v1Dotv2/Math.sqrt(v1_sum*v2_sum)));
+        if(Model=="COS")
+            return distance.cosDistance();
+        else if(Model=="EUC")
+            return distance.euclideanDistance();
+        else if(Model=="MAN")
+            return distance.manhattanDistance();
+        else //Model=="VSM"
+            return distance.vsmDistance();
     }
 }
