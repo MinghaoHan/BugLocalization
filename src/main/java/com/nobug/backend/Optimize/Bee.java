@@ -37,7 +37,7 @@ public class Bee {
 
     }
 
-    private void sendPost() throws Exception {
+    private String sendPost() throws Exception {
 
         // form parameters
         RequestBody formBody = new FormBody.Builder()
@@ -56,6 +56,7 @@ public class Bee {
 
             // Get response body
             System.out.println(response.body().string());
+            return response.body().string();
         }
 
     }
