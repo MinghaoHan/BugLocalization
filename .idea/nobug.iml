@@ -39,6 +39,11 @@
     <orderEntry type="library" name="repository_lucene" level="project" />
     <orderEntry type="library" name="lucene-core-7.7.2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.2.71" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.71" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:7.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:7.7.2" level="project" />
