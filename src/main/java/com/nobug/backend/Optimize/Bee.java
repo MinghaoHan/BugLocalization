@@ -1,8 +1,11 @@
 package com.nobug.backend.Optimize;
 
+import com.alibaba.fastjson.JSONObject;
 import okhttp3.*;
 
 import java.io.IOException;
+
+import static jdk.nashorn.internal.objects.Global.print;
 
 public class Bee {
     private final OkHttpClient httpClient = new OkHttpClient();
@@ -15,7 +18,7 @@ public class Bee {
 //        obj.sendGet();
 
         System.out.println("Testing 2 - Send Http POST request");
-        obj.sendPost();
+        obj.getBee("I experienced a crash when opening the settings menu");
 
     }
 
@@ -37,11 +40,13 @@ public class Bee {
 
     }
 
-    private String sendPost() throws Exception {
+    private String sendPost(String sentence) throws Exception {
+        if(sentence==null)
+            sentence="I experienced a crash when opening the settings menu";
 
         // form parameters
         RequestBody formBody = new FormBody.Builder()
-                .add("text", "I experienced a crash when opening the settings menu")
+                .add("text", sentence)
                 .build();
 
         Request request = new Request.Builder()
@@ -55,11 +60,19 @@ public class Bee {
             if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
             // Get response body
-            System.out.println(response.body().string());
-            return response.body().string();
+            String responseContent = response.body().string();
+            System.out.println(responseContent);
+            return responseContent;
         }
 
     }
 
-
+    public String getBee(String sentence) throws Exception {
+        String tmp = sendPost(sentence);
+        JSONObject bug_report = (JSONObject) JSONObject.parseObject(tmp).get("bug_report");
+        JSONObject res = (JSONObject) bug_report.get("0");
+        String result = res.getJSONArray("labels").toString();
+        System.out.println(result);
+        return result;
+    }
 }
