@@ -1,0 +1,45 @@
+package com.nobug.backend.Service;
+
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.*;
+
+public class FileUploadService {
+    public static void uploadImpl(@RequestParam MultipartFile file, HttpServletRequest request){
+        //得到文件"upload"的服务器路径
+        System.out.println(file.getOriginalFilename());
+
+        try {
+            InputStream is = file.getInputStream();
+
+            File filedir = new File("data\\uploadFileSet");
+            if (!filedir.exists()) {
+                filedir.mkdirs();
+            }
+
+            String newFileName = file.getOriginalFilename();
+            if (newFileName == null)
+                newFileName = "emptyName" + Math.random();
+
+            File newfile = new File(filedir, file.getOriginalFilename());
+            OutputStream os = new FileOutputStream(newfile);
+
+            byte[] byteStr = new byte[1024];
+            int len = 0;
+            while ((len = is.read(byteStr)) > 0) {
+                os.write(byteStr,0,len);
+            }
+            is.close();
+            os.flush();
+            os.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
