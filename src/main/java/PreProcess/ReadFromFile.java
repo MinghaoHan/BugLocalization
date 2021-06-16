@@ -1,5 +1,7 @@
 package PreProcess;
 
+import org.eclipse.jdt.core.dom.CompilationUnit;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -202,5 +204,14 @@ public class ReadFromFile {
         ReadFromFile.readBugFile(path2,"data/report_preprocessed2/");
 
     }
+    public static List<String> getInformation(String javaFilePath){
+        CompilationUnit comp = JdtAstUtil.getCompilationUnit(javaFilePath);
+
+        DemoVisitor visitor = new DemoVisitor();
+        comp.accept(visitor);
+        List<String> comment = visitor.comments;
+        return comment;
+    }
+
 
 }

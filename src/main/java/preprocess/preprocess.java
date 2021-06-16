@@ -26,6 +26,7 @@ public class PreProcess {
 
         comments = removeStopWords(comments);
         comments = removeKeyWords(comments);
+
         comments = lemmatisation(comments);
         comments = splitter(comments);
         comments = lemmatisation(comments);
