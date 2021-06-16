@@ -1,13 +1,13 @@
 package aqueryTest.test;
 
 import org.junit.Test;
-import query.query;
+import com.nobug.backend.query.query;
 
 import java.io.File;
 import java.text.DecimalFormat;
 import java.util.*;
 
-import query.wordMap;
+import com.nobug.backend.query.wordMap;
 
 public class AQueryTest {
     @Test
