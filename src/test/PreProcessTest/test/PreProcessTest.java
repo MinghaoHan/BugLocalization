@@ -11,20 +11,19 @@ import java.util.List;
 public class PreProcessTest {
 
     public PreProcessTest(){
+        PreProcess p = new PreProcess();
         List<String> keyWordsList = new ArrayList<String>();
         List<String> stopWordsList = new ArrayList<String>();
-        ReadFromFile.readFileByLines("src/main/resources/keyword",keyWordsList);
-        ReadFromFile.readFileByLines("src/main/resources/stopword",stopWordsList);
-        PreProcess.setKeyWordsList(keyWordsList);
-        PreProcess.setStopWordsList(stopWordsList);
+        PreProcess.readFileByLines("src/main/resources/keyword",keyWordsList);
+        PreProcess.readFileByLines("src/main/resources/stopword",stopWordsList);
+        p.setKeyWordsList();
+        p.setStopWordsList();
     }
     @Test
     public void removeKeyWordsTest(){
 
-
-
         String comments = "public statement int type abc";
-        String result = PreProcess.removeKeyWords(comments);
+        String result = new PreProcess().removeKeyWords(comments);
         Assert.assertEquals("statement type abc",result);
     }
     @Test
@@ -60,30 +59,30 @@ public class PreProcessTest {
                 "    DNDEvent() {\n" +
                 "    }\n" +
                 "}";
-        String result1 = PreProcess.removeStopWords(comments1);
+        String result1 = new PreProcess().removeStopWords(comments1);
         String expectedString1 = "public abstract class AccessibleAdapter implements AccessibleListener package org eclipse swt dnd import org eclipse swt widgets Event class DNDEvent extends Event public TransferData dataType public TransferData dataTypes public int operations public int feedback DNDEvent";
         Assert.assertEquals(expectedString1,result1);
-        String result2 = PreProcess.removeKeyWords(result1);
+        String result2 = new PreProcess().removeKeyWords(result1);
         String expectedString2 = "AccessibleAdapter AccessibleListener org eclipse swt dnd org eclipse swt widgets Event DNDEvent Event TransferData dataType TransferData dataTypes operations feedback DNDEvent";
         Assert.assertEquals(expectedString2,result2);
     }
     @Test
     public void stemTest(){
         String comments = "delegation declaration";
-        String result = PreProcess.stemming(comments);
+        String result = new PreProcess().stemming(comments);
         Assert.assertEquals("deleg declar",result);
     }
     @Test
     public void stemmingAndlemmaTest(){
         String comments = "does was files listeners";
-        String result = PreProcess.lemmatisation(comments);
-        String re = PreProcess.stemming(result);
+        String result = new PreProcess().lemmatisation(comments);
+        String re = new PreProcess().stemming(result);
         Assert.assertEquals("do be file listen",re);
     }
     @Test
     public void splitterTest(){
         String comments = "Typedeclaration styleRange lovelive";
-        String result = PreProcess.splitter(comments);
+        String result = new PreProcess().splitter(comments);
         Assert.assertEquals("Type declaration style Range love live",result);
     }
 
