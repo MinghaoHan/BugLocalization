@@ -47,17 +47,22 @@ public class ReadFromFile {
             for(int i=0;i<contents.size();i++){
                 String s = contents.get(i);
                 s = s.toLowerCase();
-                if(!tmpPre.contains(s))
-                    tmpPre.add(s);
                 String[] tmp = s.split("_");
                 for(int j=0;j<tmp.length;j++){
-                    if(!tmpPre.contains(s))
+                    if(tmp.length==1 || !tmpPre.contains(tmp[j])) {
                         tmpPre.add(tmp[j]);
+                        pre = pre + " " + tmp[j];
+                    }
                 }
             }
 
             pre = p.completePreProcess(pre);
-            out.write(pre.getBytes());
+
+            for(int i=0;i<contents.size();i++){
+                pre = pre + " " + contents.get(i).toLowerCase();
+            }
+
+//            out.write(pre.getBytes());
         }
     }
 

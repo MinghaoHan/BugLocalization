@@ -25,17 +25,15 @@ public class PreProcess {
 
     public String completePreProcess(String comments){
 
-        comments = removeStopWords(comments);
-        comments = removeKeyWords(comments);
-
-        comments = lemmatisation(comments);
         comments = splitter(comments);
         comments = lemmatisation(comments);
         comments = stemming(comments);
+
+        comments = removeKeyWords(comments);
+        comments = removeStopWords(comments);
+
         comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
-        if(comments.endsWith(" ")){
-            comments = comments.substring(0,comments.length()-1);
-        }
+
         return  comments;
     }
 
