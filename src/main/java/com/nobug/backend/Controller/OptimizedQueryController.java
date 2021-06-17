@@ -13,7 +13,7 @@ public class OptimizedQueryController {
     @CrossOrigin
     @RequestMapping("/optimizedQuery")
     public void optimizedQuery(@RequestParam String name){
-        //得到文件"upload"的服务器路径
+        //此处需要返回一个list 即优化查询的定位结果，包括按照rate从高到低排列的20个源文件与rate
         OptimizedQueryService.optimizedQueryImpl(name);
 
     }
