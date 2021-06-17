@@ -42,7 +42,4 @@ public class DemoVisitor extends ASTVisitor {
         }
         return true;
     }
-
-
 }
-

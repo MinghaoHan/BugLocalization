@@ -8,22 +8,10 @@ import java.util.List;
 
 public class ReadFromFile {
 
-    static List<String> keyWordsList = new ArrayList<String>();
-    static List<String> stopWordsList = new ArrayList<String>();
-    PreProcess p;
-    public static void setStopWordsList(List<String> stopWordsList) {
-        ReadFromFile.stopWordsList = stopWordsList;
-    }
+    static PreProcess p = new PreProcess();
 
-    public static void setKeyWordsList(List<String> keyWordsList) {
-        ReadFromFile.keyWordsList = keyWordsList;
-    }
-
-    /**
-     * 以字节为单位读取文件。
-     */
-
-    public static void recursiveRead(String path,String resultPath) {
+    /** 以字节为单位读取文件 **/
+    public void recursiveRead(String path,String resultPath) throws IOException {
         File file = new File(path);
         File[] files = file.listFiles();
         for(File f : files){
@@ -32,61 +20,50 @@ public class ReadFromFile {
             }
             if(f.isFile()){
                 readFileByBytes(f.getPath(),resultPath);
-                //readFileByChars(f.getPath());
             }
         }
     }
 
-    public static void readFileByBytes(String fileName,String resultPath) {
+    /** 单个源文件的预处理 **/
+    public void readFileByBytes(String fileName,String resultPath) throws IOException {
 
         int docIndex = fileName.lastIndexOf(".");
-        int nameIndex = fileName.lastIndexOf("\\");
+        int nameIndex = fileName.lastIndexOf(File.separator);
         String resultName = fileName.substring(nameIndex+1,docIndex);
         String type = fileName.substring(docIndex+1);
+
         if(type.equals("java")) {
             resultName += ".txt";
-
-            //File file = new File(fileName);
             File os = new File(resultPath + resultName);
-            //File os = new File("data/report_preprocessed/" + resultName);
             InputStream in = null;
-            OutputStream out;
-            try {
-                System.out.println("以字节为单位读取文件内容，一次读多个字节：");
-                // 一次读多个字节
+            OutputStream out = new FileOutputStream(os);;
 
-                int byteread = 0;
-                in = new FileInputStream(fileName);
-                byte[] tempbytes = new byte[in.available()];
-                out = new FileOutputStream(os);
-                ReadFromFile.showAvailableBytes(in);
+            List<String> contents = new ArrayList<>();
+            contents = this.getInformation(fileName);
 
-                // 读入多个字节到字节数组中，byteread为一次读入的字节数
-                while ((byteread = in.read(tempbytes)) != -1) {
-                    //System.out.write(tempbytes, 0, byteread);
-                    String comments = new String(tempbytes);
+            List<String> tmpPre = new ArrayList<>();
+            String pre = "";
 
-                    comments = getResultString(comments);
-
-                    out.write(comments.getBytes());
-
-                }
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            } finally {
-                if (in != null) {
-                    try {
-                        in.close();
-                    } catch (IOException e1) {
-                    }
+            for(int i=0;i<contents.size();i++){
+                String s = contents.get(i);
+                s = s.toLowerCase();
+                if(!tmpPre.contains(s))
+                    tmpPre.add(s);
+                String[] tmp = s.split("_");
+                for(int j=0;j<tmp.length;j++){
+                    if(!tmpPre.contains(s))
+                        tmpPre.add(tmp[j]);
                 }
             }
+
+            pre = p.completePreProcess(pre);
+            out.write(pre.getBytes());
         }
     }
 
 
 
-    public static void readBugFile(String fileName,String resultPath) {
+    public void readBugFile(String fileName, String resultPath) {
 
         int docIndex = fileName.lastIndexOf(".");
         String resultName = ".txt";
@@ -95,15 +72,12 @@ public class ReadFromFile {
             InputStream in = null;
             OutputStream out = null;
             try {
-                System.out.println("以字节为单位读取文件内容，一次读多个字节：");
-                // 一次读多个字节
-
                 int byteread = 0;
                 in = new FileInputStream(fileName);
                 byte[] tempbytes = new byte[in.available()];
 
-                ReadFromFile.showAvailableBytes(in);
-                // 读入多个字节到字节数组中，byteread为一次读入的字节数
+                System.out.println("当前字节输入流中的字节数为:" + in.available());
+
                 while ((byteread = in.read(tempbytes)) != -1) {
                     String comments = new String(tempbytes);
                     String comments0 = "";
@@ -114,7 +88,8 @@ public class ReadFromFile {
                             out = new FileOutputStream(os);
                         }
 
-                        if(comments.substring(i,i+9).equals("<summary>")){//title information
+                        if(comments.substring(i,i+9).equals("<summary>")){
+                            //title information
                             comments0 = comments.substring(i+9,comments.indexOf("</summary>",i));
                         }
                         if(comments.substring(i,i+13).equals("<description>")){
@@ -122,7 +97,6 @@ public class ReadFromFile {
                             comments1 = getResultString(comments1);
 
                             out.write(comments1.getBytes());
-
 
                         }
                     }
@@ -142,69 +116,31 @@ public class ReadFromFile {
             }
         }
     }
-    public static void readFileByLines(String fileName, List<String> list) {
-        File file = new File(fileName);
-        BufferedReader reader = null;
-        try {
-            System.out.println("以行为单位读取文件内容，一次读一整行：");
-            reader = new BufferedReader(new FileReader(file));
-            String tempString = null;
-            int line = 1;
-            // 一次读入一行，直到读入null为文件结束
-            while ((tempString = reader.readLine()) != null) {
-                // 显示行号
 
-                list.add(tempString);
-                line++;
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
-    }
 
-    /**
-     * 显示输入流中还剩的字节数
-     */
-
-    private static void showAvailableBytes(InputStream in) {
-        try {
-
-            System.out.println("当前字节输入流中的字节数为:" + in.available());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    private static String getResultString(String comments) {
-        PreProcess.setKeyWordsList(keyWordsList);
-        PreProcess.setStopWordsList(stopWordsList);
+    private String getResultString(String comments) {
+        PreProcess p = new PreProcess();
+        p.setKeyWordsList();
+        p.setStopWordsList();
         comments = comments.toLowerCase();
-        comments = PreProcess.completePreProcess(comments);
+        comments = p.completePreProcess(comments);
         return comments;
     }
-    public static void getResult() {
-        String path1 = "data\\swt-3.1";
 
-        String path2 = "data\\SWTBugRepository.xml";
-        List<String> keyWordsList = new ArrayList<String>();
-        List<String> stopWordsList = new ArrayList<String>();
-        ReadFromFile.readFileByLines("src/main/resources/keyword",keyWordsList);
-        ReadFromFile.readFileByLines("src/main/resources/stopword",stopWordsList);
-        ReadFromFile.setKeyWordsList(keyWordsList);
-        ReadFromFile.setStopWordsList(stopWordsList);
+    public void getResult() throws IOException {
+        /** 此处修改待预处理的文件 **/
+        String path1 = "data"+File.separator+"swt-3.1";
+        String path2 = "data"+File.separator+"SWTBugRepository.xml";
 
-        ReadFromFile.recursiveRead(path1,"data/class_preprocessed2/");
-        ReadFromFile.readBugFile(path2,"data/report_preprocessed2/");
+        /** 预处理源文件 **/
+        this.recursiveRead(path1,"data/class_preprocessed3/");
 
+        /** 预处理bug报告 **/
+        this.readBugFile(path2,"data/report_preprocessed3/");
     }
-    public static List<String> getInformation(String javaFilePath){
+
+    /** AST 返回Java文件 所有标识符（类名、方法名、变量名） **/
+    public List<String> getInformation(String javaFilePath){
         CompilationUnit comp = JdtAstUtil.getCompilationUnit(javaFilePath);
 
         DemoVisitor visitor = new DemoVisitor();

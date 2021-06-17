@@ -1,4 +1,3 @@
-/*
 package com.nobug.backend;
 
 import com.nobug.backend.BugLocator.BugLocator;
@@ -13,8 +12,8 @@ import java.sql.SQLException;
 
 public class Startup {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException, WriteException {
-//        ReadFromFile.getResult();
-        Sources ss = new Sources("data/class_preprocessed2/");
+        new ReadFromFile().getResult();
+        Sources ss = new Sources("data/class_preprocessed3/");
         BugReporter bugs = new BugReporter("data/report_preprocessed3");
 
 //        CreateIndexDaoImpl cidi = new CreateIndexDaoImpl(ss);
@@ -23,5 +22,3 @@ public class Startup {
         bugLocator.bugLocator();
     }
 }
-
-*/

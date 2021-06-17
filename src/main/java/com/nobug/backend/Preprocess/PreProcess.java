@@ -8,21 +8,22 @@ import edu.stanford.nlp.util.CoreMap;
 import edu.stanford.nlp.util.StringUtils;
 import org.tartarus.snowball.ext.PorterStemmer;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 public class PreProcess {
 
+    List<String> keyWordsList = new ArrayList<String>();
+    List<String> stopWordsList = new ArrayList<String>();
 
-    static List<String> keyWordsList = new ArrayList<String>();
-    static List<String> stopWordsList = new ArrayList<String>();
+    public PreProcess(){
+        this.setKeyWordsList();
+        this.setStopWordsList();
+    }
 
-    public static String completePreProcess(String comments){
+    public String completePreProcess(String comments){
 
         comments = removeStopWords(comments);
         comments = removeKeyWords(comments);
@@ -38,15 +39,39 @@ public class PreProcess {
         return  comments;
     }
 
-    public static void setKeyWordsList(List<String> keyWordsList) {
-        PreProcess.keyWordsList = keyWordsList;
+    public static void readFileByLines(String fileName, List<String> list) {
+        File file = new File(fileName);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String tempString = null;
+            int line = 1;
+            while ((tempString = reader.readLine()) != null) {
+                list.add(tempString);
+                line++;
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e1) {
+                }
+            }
+        }
     }
 
-    public static void setStopWordsList(List<String> stopWordsList) {
-        PreProcess.stopWordsList = stopWordsList;
+    public void setKeyWordsList() {
+        this.readFileByLines("src/main/resources/keyword",this.keyWordsList);
     }
 
-    public static String removeKeyWords(String comments){
+    public void setStopWordsList() {
+        this.readFileByLines("src/main/resources/stopword",this.stopWordsList);
+    }
+
+    public String removeKeyWords(String comments){
         String[] commentsList = comments.split(" ");
         for(String str1 : keyWordsList){
             for(int i3 = 0;i3<commentsList.length;i3++){
@@ -61,23 +86,13 @@ public class PreProcess {
         comments = comments.trim();
         return comments;
     }
-    public static String removeStopWords(String comments){
+    public String removeStopWords(String comments){
         int i = comments.indexOf("/*");
 
         while(i!=-1) {
             comments = comments.replace(comments.substring(i, comments.indexOf("*/",i)+2), "");
             i = comments.indexOf("/*");
         }
-        /*
-        int i0 = comments.indexOf("//");
-
-        while (i0!=-1){
-
-            comments = comments.replace(comments.substring(i0, comments.indexOf("\n",i0)), "");
-            i0 = comments.indexOf("//");
-        }
-
-         */
 
         comments = comments.replace("\n"," ");
 
@@ -99,7 +114,7 @@ public class PreProcess {
         return comments;
     }
 
-    public static String lemmatisation(String comments){
+    public String lemmatisation(String comments){
         Properties props = new Properties();  // set up pipeline properties
         props.put("annotators", "tokenize, ssplit, pos, lemma");   //分词、分句、词性标注和次元信息。
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
@@ -111,16 +126,16 @@ public class PreProcess {
             for (CoreLabel token: word_temp.get(CoreAnnotations.TokensAnnotation.class)) {
 
                 String lema = token.get(CoreAnnotations.LemmaAnnotation.class);  // 获取对应上面word的词元信息，即我所需要的词形还原后的单词
-                //System.out.println(lema);
+
                 result+=lema + " ";
             }
         }
-        //result = result.substring(0,result.length()-1);
+
         return result;
     }
 
 
-    public static String stemming (String comments) {
+    public String stemming (String comments) {
         String[] words = comments.split(" ");
         PorterStemmer stem = new PorterStemmer();
         String result = "";
@@ -131,7 +146,9 @@ public class PreProcess {
         }
         return result.substring(0,result.length()-1);
     }
-    public static String splitterLittle(String comments){
+
+
+    public String splitterLittle(String comments){
         try {
             File directory = new File("");
 
@@ -156,20 +173,17 @@ public class PreProcess {
             e.printStackTrace();
         }
         return "";
-
     }
-    public static String splitter(String comments) {
 
-
+    public String splitter(String comments) {
         String result = "";
         while(comments.length()>20000){
             String comments1 = comments.substring(0,comments.indexOf(" ",10000));
             splitterLittle(comments1);
             result+=comments1;
             comments = comments.substring(comments.indexOf(" ",10000)+1);
-
-
         }
+
         comments = splitterLittle(comments);
         result+=comments;
         result = result.replaceAll("\\s+"," ");//多空格替换为单空格
@@ -183,7 +197,5 @@ public class PreProcess {
         return result;
 
     }
-
-
 
 }
