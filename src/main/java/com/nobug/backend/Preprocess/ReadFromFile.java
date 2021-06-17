@@ -1,14 +1,16 @@
 package com.nobug.backend.Preprocess;
 
+import org.eclipse.jdt.core.dom.CompilationUnit;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFromFile {
 
-    static List<String> keyWordsList = new ArrayList<>();
-    static List<String> stopWordsList = new ArrayList<>();
-
+    static List<String> keyWordsList = new ArrayList<String>();
+    static List<String> stopWordsList = new ArrayList<String>();
+    PreProcess p;
     public static void setStopWordsList(List<String> stopWordsList) {
         ReadFromFile.stopWordsList = stopWordsList;
     }
@@ -64,20 +66,8 @@ public class ReadFromFile {
                     //System.out.write(tempbytes, 0, byteread);
                     String comments = new String(tempbytes);
 
-                    preprocess.setKeyWordsList(keyWordsList);
-                    preprocess.setStopWordsList(stopWordsList);
-                    comments = comments.toLowerCase();
-                    comments = preprocess.removeStopWords(comments);
-                    comments = preprocess.removeKeyWords(comments);
+                    comments = getResultString(comments);
 
-                    comments = preprocess.lemmatisation(comments);
-                    comments = preprocess.splitter(comments);
-                    comments = preprocess.lemmatisation(comments);
-                    comments = preprocess.stemming(comments);
-                    comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
-                    if(comments.endsWith(" ")){
-                        comments = comments.substring(0,comments.length()-1);
-                    }
                     out.write(comments.getBytes());
 
                 }
@@ -93,6 +83,9 @@ public class ReadFromFile {
             }
         }
     }
+
+
+
     public static void readBugFile(String fileName,String resultPath) {
 
         int docIndex = fileName.lastIndexOf(".");
@@ -126,19 +119,8 @@ public class ReadFromFile {
                         }
                         if(comments.substring(i,i+13).equals("<description>")){
                             String comments1 = comments0 + comments.substring(i+13,comments.indexOf("</description>",i));
-                            preprocess.setKeyWordsList(keyWordsList);
-                            preprocess.setStopWordsList(stopWordsList);
-                            comments1 = comments1.toLowerCase();
-                            comments1 = preprocess.removeStopWords(comments1);
-                            comments1 = preprocess.removeKeyWords(comments1);
-                            comments1 = preprocess.lemmatisation(comments1);
-                            comments1 = preprocess.splitter(comments1);
-                            comments1 = preprocess.lemmatisation(comments1);
-                            comments1 = preprocess.stemming(comments1);
-                            comments1 = comments1.replaceAll("\\s+"," ");//多空格替换为单空格
-                            if(comments1.endsWith(" ")){
-                                comments1 = comments1.substring(0,comments.length()-1);
-                            }
+                            comments1 = getResultString(comments1);
+
                             out.write(comments1.getBytes());
 
 
@@ -200,7 +182,13 @@ public class ReadFromFile {
             e.printStackTrace();
         }
     }
-
+    private static String getResultString(String comments) {
+        PreProcess.setKeyWordsList(keyWordsList);
+        PreProcess.setStopWordsList(stopWordsList);
+        comments = comments.toLowerCase();
+        comments = PreProcess.completePreProcess(comments);
+        return comments;
+    }
     public static void getResult() {
         String path1 = "data\\swt-3.1";
 
@@ -216,5 +204,14 @@ public class ReadFromFile {
         ReadFromFile.readBugFile(path2,"data/report_preprocessed2/");
 
     }
+    public static List<String> getInformation(String javaFilePath){
+        CompilationUnit comp = JdtAstUtil.getCompilationUnit(javaFilePath);
+
+        DemoVisitor visitor = new DemoVisitor();
+        comp.accept(visitor);
+        List<String> comment = visitor.comments;
+        return comment;
+    }
+
 
 }

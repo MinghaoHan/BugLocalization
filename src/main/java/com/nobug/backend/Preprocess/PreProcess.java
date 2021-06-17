@@ -16,24 +16,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class preprocess {
+public class PreProcess {
 
 
     static List<String> keyWordsList = new ArrayList<String>();
     static List<String> stopWordsList = new ArrayList<String>();
 
-    public preprocess(String comments){
+    public static String completePreProcess(String comments){
 
-        removeStopWords(comments);
-        removeKeyWords(comments);
+        comments = removeStopWords(comments);
+        comments = removeKeyWords(comments);
+
+        comments = lemmatisation(comments);
+        comments = splitter(comments);
+        comments = lemmatisation(comments);
+        comments = stemming(comments);
+        comments = comments.replaceAll("\\s+"," ");//多空格替换为单空格
+        if(comments.endsWith(" ")){
+            comments = comments.substring(0,comments.length()-1);
+        }
+        return  comments;
     }
 
     public static void setKeyWordsList(List<String> keyWordsList) {
-        preprocess.keyWordsList = keyWordsList;
+        PreProcess.keyWordsList = keyWordsList;
     }
 
     public static void setStopWordsList(List<String> stopWordsList) {
-        preprocess.stopWordsList = stopWordsList;
+        PreProcess.stopWordsList = stopWordsList;
     }
 
     public static String removeKeyWords(String comments){
@@ -151,26 +161,26 @@ public class preprocess {
     public static String splitter(String comments) {
 
 
-            String result = "";
-            while(comments.length()>20000){
-                String comments1 = comments.substring(0,comments.indexOf(" ",10000));
-                splitterLittle(comments1);
-                result+=comments1;
-                comments = comments.substring(comments.indexOf(" ",10000)+1);
+        String result = "";
+        while(comments.length()>20000){
+            String comments1 = comments.substring(0,comments.indexOf(" ",10000));
+            splitterLittle(comments1);
+            result+=comments1;
+            comments = comments.substring(comments.indexOf(" ",10000)+1);
 
 
+        }
+        comments = splitterLittle(comments);
+        result+=comments;
+        result = result.replaceAll("\\s+"," ");//多空格替换为单空格
+        String[] strlist = result.split(" ");
+        for(int i = 0;i<strlist.length;i++){
+            if(strlist[i].length()==1){
+                strlist[i] = "";
             }
-            comments = splitterLittle(comments);
-            result+=comments;
-            result = result.replaceAll("\\s+"," ");//多空格替换为单空格
-            String[] strlist = result.split(" ");
-            for(int i = 0;i<strlist.length;i++){
-                if(strlist[i].length()==1){
-                    strlist[i] = "";
-                }
-            }
-            result = StringUtils.join(strlist," ");
-            return result;
+        }
+        result = StringUtils.join(strlist," ");
+        return result;
 
     }
 
