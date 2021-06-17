@@ -13,7 +13,6 @@ public class FileUploadController {
     @CrossOrigin
     @RequestMapping("/uploadFile")
     public void upload(@RequestParam MultipartFile file, HttpServletRequest request){
-        //得到文件"upload"的服务器路径
         FileUploadService.uploadImpl(file,request);
 
     }
