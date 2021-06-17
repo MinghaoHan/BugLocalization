@@ -25,6 +25,7 @@ public class PreProcess {
 
     public String completePreProcess(String comments){
 
+        comments = removeStopWords(comments);
         comments = splitter(comments);
         comments = lemmatisation(comments);
         comments = stemming(comments);

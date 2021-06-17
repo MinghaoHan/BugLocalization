@@ -61,7 +61,7 @@ public class Bee {
 
             // Get response body
             String responseContent = response.body().string();
-            System.out.println(responseContent);
+//            System.out.println(responseContent);
             return responseContent;
         }
 
@@ -72,7 +72,6 @@ public class Bee {
         JSONObject bug_report = (JSONObject) JSONObject.parseObject(tmp).get("bug_report");
         JSONObject res = (JSONObject) bug_report.get("0");
         String result = res.getJSONArray("labels").toString();
-        System.out.println(result);
         return result;
     }
 }

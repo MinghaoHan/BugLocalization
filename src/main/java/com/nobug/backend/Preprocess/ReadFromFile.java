@@ -1,5 +1,6 @@
 package com.nobug.backend.Preprocess;
 
+import com.nobug.backend.Optimize.Bee;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
 import java.io.*;
@@ -33,6 +34,7 @@ public class ReadFromFile {
         String type = fileName.substring(docIndex+1);
 
         if(type.equals("java")) {
+            System.out.println("********"+"Source File: "+resultName+".java********");
             resultName += ".txt";
             File os = new File(resultPath + resultName);
             InputStream in = null;
@@ -62,7 +64,7 @@ public class ReadFromFile {
                 pre = pre + " " + contents.get(i).toLowerCase();
             }
 
-//            out.write(pre.getBytes());
+            out.write(pre.getBytes());
         }
     }
 
@@ -73,36 +75,50 @@ public class ReadFromFile {
         int docIndex = fileName.lastIndexOf(".");
         String resultName = ".txt";
         String type = fileName.substring(docIndex+1);
+
         if(type.equals("xml")) {
             InputStream in = null;
             OutputStream out = null;
+
             try {
                 int byteread = 0;
                 in = new FileInputStream(fileName);
                 byte[] tempbytes = new byte[in.available()];
 
-                System.out.println("当前字节输入流中的字节数为:" + in.available());
-
                 while ((byteread = in.read(tempbytes)) != -1) {
                     String comments = new String(tempbytes);
-                    String comments0 = "";
+                    String title = "";
+                    String description = "";
+                    boolean flag = false;
                     for(int i = 0;i<byteread - 13;i++){
+
+                        /** 形成文件名 **/
                         if(comments.substring(i,i+7).equals("bug id=")){
+                            flag = true;
                             resultName = "report"+comments.substring(i+8,comments.indexOf("\"",i+8))+".txt";
                             File os = new File(resultPath + resultName);
                             out = new FileOutputStream(os);
                         }
 
+                        /** Title **/
                         if(comments.substring(i,i+9).equals("<summary>")){
-                            //title information
-                            comments0 = comments.substring(i+9,comments.indexOf("</summary>",i));
+                            title = comments.substring(i+9,comments.indexOf("</summary>",i));
                         }
+
+                        /** bug详细内容 **/
                         if(comments.substring(i,i+13).equals("<description>")){
-                            String comments1 = comments0 + comments.substring(i+13,comments.indexOf("</description>",i));
+                            description = comments.substring(i+13,comments.indexOf("</description>",i));
+                        }
+
+                        if(flag==true&&comments.substring(i,i+6).equals("</bug>")){
+                            System.out.println("********"+"Bug Report: "+resultName+"********");
+                            if(!description.isEmpty())
+                                description = getContent(description);
+                            String comments1 = title +" "+description;
                             comments1 = getResultString(comments1);
 
                             out.write(comments1.getBytes());
-
+                            flag = false;
                         }
                     }
 
@@ -122,6 +138,21 @@ public class ReadFromFile {
         }
     }
 
+    public String getContent(String sentence) throws Exception {
+        String[] tmpSen = sentence.split("[.][\\s]");
+        String res = "";
+        for(int i = 0 ; i<tmpSen.length;i++){
+            if(tmpSen[i].length()>=6&&this.isOB(tmpSen[i])==true){
+                res += tmpSen[i] + " ";
+            }
+        }
+        return res;
+    }
+
+    public boolean isOB(String sentence) throws Exception {
+        String res = new Bee().getBee(sentence);
+        return res.contains("OB");
+    }
 
     private String getResultString(String comments) {
         PreProcess p = new PreProcess();
@@ -138,13 +169,13 @@ public class ReadFromFile {
         String path2 = "data"+File.separator+"SWTBugRepository.xml";
 
         /** 预处理源文件 **/
-        this.recursiveRead(path1,"data/class_preprocessed3/");
+//        this.recursiveRead(path1,"data/class_preprocessed3/");
 
         /** 预处理bug报告 **/
         this.readBugFile(path2,"data/report_preprocessed3/");
     }
 
-    /** AST 返回Java文件 所有标识符（类名、方法名、变量名） **/
+    /** AST: 返回Java文件 所有标识符（类名、方法名、变量名） **/
     public List<String> getInformation(String javaFilePath){
         CompilationUnit comp = JdtAstUtil.getCompilationUnit(javaFilePath);
 

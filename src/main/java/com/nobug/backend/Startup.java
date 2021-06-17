@@ -12,13 +12,18 @@ import java.sql.SQLException;
 
 public class Startup {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException, WriteException {
-        new ReadFromFile().getResult();
+        /** 预处理 **/
+//        new ReadFromFile().getResult();
+
+        /** 修改源代码 和 bug报告 的地址 **/
         Sources ss = new Sources("data/class_preprocessed3/");
         BugReporter bugs = new BugReporter("data/report_preprocessed3");
 
+        /** 源代码写入数据库，若未运行，即数据库中现有结果 **/
 //        CreateIndexDaoImpl cidi = new CreateIndexDaoImpl(ss);
 //        cidi.createSourceIndex();
-        BugLocator bugLocator = new BugLocator(bugs,ss,"data/RankList3.xls",0);
+
+        BugLocator bugLocator = new BugLocator(bugs,ss,"data/RankList2.xls",0);
         bugLocator.bugLocator();
     }
 }

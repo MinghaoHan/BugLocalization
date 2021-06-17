@@ -158,6 +158,18 @@ public class BugLocator {
         }
     }
 
+    public Vector<String> uploadBug(String filename) {
+        File file = new File("data/uploadFileSet/"+filename);
+        List<Map.Entry<String, Double>> res = bugSort(file.getAbsolutePath());
+        for(int j=0;j<res.size();j++){
+            String name_temp = res.get(j).getKey();
+            String v_temp = String.valueOf(res.get(j).getValue());
+
+            if(Double.valueOf(v_temp)<0.0001) break;                //相似度小于0.0001，认为无关，不做记录
+            System.out.println(String.format("%-40s",name_temp)+"  "+v_temp);
+        }
+    }
+
     public void writeIn(String bugR, String SF, String v) throws IOException, WriteException {
         String [] title = {"BugReport","ClassFile","Similarity"};
         File f = new File(this.RankList);
@@ -222,14 +234,13 @@ public class BugLocator {
                 filename = entry.getKey();
             }
 
-            //Todo: 在这里加入相似度模型，VSM等
+            /** 在这里加入相似度模型，VSM等 **/
             SourceSort.put(filename, new VectorSpaceModel("VSM").calculate(ss.getPath(),filename,wordSF,bugPath));
         }
 
         //根据value，降序排列
         List<Map.Entry<String,Double>> mappingList = null;
         mappingList = new ArrayList<Map.Entry<String,Double>>(SourceSort.entrySet());
-        //通过比较器实现比较排序
         Collections.sort(mappingList, new Comparator<Map.Entry<String,Double>>(){
             public int compare(Map.Entry<String,Double> mapping1,Map.Entry<String,Double> mapping2){
                 if (mapping1.getValue()< mapping2.getValue()) return 1;
@@ -258,9 +269,16 @@ public class BugLocator {
                 HashMap<String,HashMap<String,Double>> map = new HashMap<String,HashMap<String, Double>>();
                 HashMap<String,Double> tmp = new HashMap<>();
                 String[] words = rs.getString("word").split(" ");
-                for(int item=0;item < words.length;item+=2){
+                for(int item=0;item < words.length;){
+                    if(words[item].isEmpty()||(words[item].charAt(0)>='0'&&words[item].charAt(0)<='9')) {
+                        item+=1;
+                        continue;
+                    }
                     tmp.put(words[item],Double.valueOf(words[item+1]));
+                    item+=2;
                 }
+
+                /** map: <文件名, <单词, tf-idf>> **/
                 map.put(rs.getString("name"),tmp);
                 columns.add(map);
             }
