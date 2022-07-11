@@ -1,0 +1,1 @@
+memori leak clipboardproxi getfunc

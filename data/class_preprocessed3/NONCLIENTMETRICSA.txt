@@ -1,0 +1,1 @@
+nonclientmetricsa lfcaptionfont lfsmcaptionfont lfmenufont lfstatusfont lfmessagefont sizeof nonclientmetricsa lfcaptionfont lfsmcaptionfont lfmenufont lfstatusfont lfmessagefont sizeof

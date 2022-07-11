@@ -1,0 +1,1 @@
+minmaxinfo ptreserv ptmaxsiz ptmaxposit ptmintracks ptmaxtracks sizeof minmaxinfo ptreserved_x ptreserved_y ptmaxsize_x ptmaxsize_y ptmaxposition_x ptmaxposition_y ptmintracksize_x ptmintracksize_y ptmaxtracksize_x ptmaxtracksize_y sizeof

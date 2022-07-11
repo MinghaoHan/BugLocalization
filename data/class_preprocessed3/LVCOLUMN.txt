@@ -1,0 +1,1 @@
+lvcolumn mask fmt cx psztext cchtextmax isubitem iimag iorder sizeof lvcolumn mask fmt cx psztext cchtextmax isubitem iimage iorder sizeof

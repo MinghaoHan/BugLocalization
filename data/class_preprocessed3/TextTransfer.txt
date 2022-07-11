@@ -1,0 +1,1 @@
+texttransf instanc cf unicodetext text unicodetextid textid getinst javaton nativetojava gettypeid gettypenam checktext valid texttransfer _instance cf_unicodetext cf_text cf_unicodetextid cf_textid getinstance javatonative nativetojava gettypeids gettypenames checktext validate

@@ -1,0 +1,1 @@
+tabitem parent control tooltiptext checksubclass getcontrol getpar gettooltiptext releasechild releasewidget setcontrol setimag settext settooltiptext tabitem parent control tooltiptext checksubclass getcontrol getparent gettooltiptext releasechild releasewidget setcontrol setimage settext settooltiptext

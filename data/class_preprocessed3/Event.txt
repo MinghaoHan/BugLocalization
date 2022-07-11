@@ -1,0 +1,1 @@
+event displai widget type detail item gc width height count time button charact keycod statemask start text doit datum getbound setbound tostr event display widget type detail item gc x y width height count time button character keycode statemask start end text doit data getbounds setbounds tostring

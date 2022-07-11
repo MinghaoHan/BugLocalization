@@ -1,0 +1,1 @@
+toolinfo cbsize uflag hwnd uid leav top bottom hinst lpsztext lparam sizeof toolinfo cbsize uflags hwnd uid left top right bottom hinst lpsztext lparam sizeof

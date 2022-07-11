@@ -1,0 +1,1 @@
+librari major version minor revis java swt parsevers loadlibrari library major_version minor_version revision java_version swt_version parseversion loadlibrary

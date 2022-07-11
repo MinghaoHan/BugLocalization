@@ -1,0 +1,1 @@
+notifyicondata cbsize hwnd uid uflag ucallbackmessag hicon dwstate dwstatemask uvers dwinfoflag sizeof notifyicondata cbsize hwnd uid uflags ucallbackmessage hicon dwstate dwstatemask uversion dwinfoflags sizeof

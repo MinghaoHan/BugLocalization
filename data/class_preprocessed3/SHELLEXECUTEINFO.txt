@@ -1,0 +1,1 @@
+shellexecuteinfo cbsize fmask hwnd lpverb lpfile lpparamet lpdirectori nshow hinstapp lpidlist lpclass hkeyclass dwhotkei hicon hprocess sizeof shellexecuteinfo cbsize fmask hwnd lpverb lpfile lpparameters lpdirectory nshow hinstapp lpidlist lpclass hkeyclass dwhotkey hicon hprocess sizeof

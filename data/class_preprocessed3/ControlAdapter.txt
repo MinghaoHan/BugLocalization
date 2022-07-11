@@ -1,0 +1,1 @@
+controladapt controlmov controlres controladapter controlmoved controlresized

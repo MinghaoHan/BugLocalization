@@ -1,0 +1,1 @@
+shmenubarinfo cbsize hwndparent dwflag ntoolbarid hinstr nbmpid cbmpimag hwndmb sizeof shmenubarinfo cbsize hwndparent dwflags ntoolbarid hinstres nbmpid cbmpimages hwndmb sizeof

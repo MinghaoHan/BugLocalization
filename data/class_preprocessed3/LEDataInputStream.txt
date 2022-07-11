@@ -1,0 +1,1 @@
+ledatainputstream posit buf po close getposit avail read readdata readint readshort unread ledatainputstream position in buf pos close getposition available read readdata readint readshort unread

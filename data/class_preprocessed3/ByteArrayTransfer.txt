@@ -1,0 +1,1 @@
+bytearraytransf getsupportedtyp issupportedtyp javaton nativetojava checkbytearrai bytearraytransfer getsupportedtypes issupportedtype javatonative nativetojava checkbytearray

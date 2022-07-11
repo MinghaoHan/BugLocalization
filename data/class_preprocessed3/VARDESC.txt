@@ -1,0 +1,1 @@
+vardesc memid lpstrschema oinst elemdescvar tdesc union vt paramdesc pparamdescex wparamflag wvarflag varkind sizeof vardesc memid lpstrschema oinst elemdescvar_tdesc_union elemdescvar_tdesc_vt elemdescvar_paramdesc_pparamdescex elemdescvar_paramdesc_wparamflags wvarflags varkind sizeof

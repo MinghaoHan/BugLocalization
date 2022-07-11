@@ -1,0 +1,1 @@
+mouseinput dx dy mousedata dwflag time dwextrainfo sizeof mouseinput dx dy mousedata dwflags time dwextrainfo sizeof

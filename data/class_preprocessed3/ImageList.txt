@@ -1,0 +1,1 @@
+imagelist handl style refcount imag color flag add addref copybitmap copyicon copywithalpha createmask dispos getstyl gethandl getimages indexof remov removeref set size imagelist handle style refcount images color_flags add addref copybitmap copyicon copywithalpha createmask dispose get getstyle gethandle getimagesize indexof put remove removeref set size

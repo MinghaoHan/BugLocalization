@@ -1,0 +1,1 @@
+rowlayout type marginwidth marginheight space wrap pack fill justifi marginleft margintop marginright marginbottom computes flushcach getnam layout layouthorizont layoutvert tostr rowlayout type marginwidth marginheight spacing wrap pack fill justify marginleft margintop marginright marginbottom computesize flushcache getname layout layouthorizontal layoutvertical tostring

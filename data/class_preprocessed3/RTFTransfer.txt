@@ -1,0 +1,1 @@
+rtftransfer instanc cf rtf rtfid getinst javaton nativetojava gettypeid gettypenam checkrtf valid rtftransfer _instance cf_rtf cf_rtfid getinstance javatonative nativetojava gettypeids gettypenames checkrtf validate

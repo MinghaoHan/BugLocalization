@@ -1,0 +1,1 @@
+extlogpen elppenstyl elpwidth elpbrushstyl elpcolor elphatch elpnumentri elpstyleentri sizeof extlogpen elppenstyle elpwidth elpbrushstyle elpcolor elphatch elpnumentries elpstyleentry sizeof

@@ -1,0 +1,1 @@
+font handl dispos equal getfontdata hashcod init isdispos tostr win font handle dispose equals getfontdata hashcode init isdisposed tostring win32_new

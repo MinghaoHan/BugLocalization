@@ -1,0 +1,1 @@
+pngtrnschunk transpar type pixel alpha validatelength valid gettransparencytyp getswttransparentpixel getalphavalu pngtrnschunk transparency_type_pixel transparency_type_alphas validatelength validate gettransparencytype getswttransparentpixel getalphavalues

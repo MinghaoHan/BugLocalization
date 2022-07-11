@@ -1,0 +1,1 @@
+choosecolor lstructsiz hwndowner hinstanc rgbresult lpcustcolor flag lcustdata lpfnhook lptemplatenam sizeof choosecolor lstructsize hwndowner hinstance rgbresult lpcustcolors flags lcustdata lpfnhook lptemplatename sizeof

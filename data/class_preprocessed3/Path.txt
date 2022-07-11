@@ -1,0 +1,1 @@
+path handl currentpoint startpoint addarc addpath addrectangl addstr close cubicto dispos getbound getcurrentpoint getpathdata lineto isdispos moveto quadto tostr path handle currentpoint startpoint addarc addpath addrectangle addstring close contains cubicto dispose getbounds getcurrentpoint getpathdata lineto isdisposed moveto quadto tostring

@@ -1,0 +1,1 @@
+oleinplaceframeinfo cb fmdiapp hwndframe haccel caccelentri sizeof oleinplaceframeinfo cb fmdiapp hwndframe haccel caccelentries sizeof

@@ -1,0 +1,1 @@
+pattern handl dispos isdispos tostr pattern handle dispose isdisposed tostring

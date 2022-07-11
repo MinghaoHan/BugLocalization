@@ -1,0 +1,1 @@
+gdiplusstartupinput gdiplusvers debugeventcallback suppressbackgroundthread suppressexternalcodec sizeof gdiplusstartupinput gdiplusversion debugeventcallback suppressbackgroundthread suppressexternalcodecs sizeof

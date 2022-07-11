@@ -1,0 +1,1 @@
+transfer getsupportedtyp issupportedtyp gettypeid gettypenam javaton nativetojava registertyp valid transfer getsupportedtypes issupportedtype gettypeids gettypenames javatonative nativetojava registertype validate

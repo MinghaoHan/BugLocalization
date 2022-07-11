@@ -1,0 +1,1 @@
+canva caret cleararea getcaret releasewidget scroll setcaret setfont wm inputlangchang killfocu setfocu size windowposchang windowposchang canvas caret cleararea getcaret releasewidget scroll setcaret setfont wm_inputlangchange wm_killfocus wm_setfocus wm_size wm_windowposchanged wm_windowposchanging

@@ -1,0 +1,1 @@
+gcp result lstructsiz lpoutstr lporder lpdx lpcaretpo lpclass lpglyph nglyph nmaxfit sizeof gcp_results lstructsize lpoutstring lporder lpdx lpcaretpos lpclass lpglyphs nglyphs nmaxfit sizeof

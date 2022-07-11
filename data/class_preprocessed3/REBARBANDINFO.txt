@@ -1,0 +1,1 @@
+rebarbandinfo cbsize fmask fstyle clrfore clrback lptext cch iimag hwndchild cxminchild cyminchild cx hbmback wid cychild cymaxchild cyintegr cxideal lparam cxheader sizeof rebarbandinfo cbsize fmask fstyle clrfore clrback lptext cch iimage hwndchild cxminchild cyminchild cx hbmback wid cychild cymaxchild cyintegral cxideal lparam cxheader sizeof

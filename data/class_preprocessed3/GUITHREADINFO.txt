@@ -1,0 +1,1 @@
+guithreadinfo cbsize flag hwndactiv hwndfocu hwndcaptur hwndmenuown hwndmoves hwndcaret leav top bottom sizeof guithreadinfo cbsize flags hwndactive hwndfocus hwndcapture hwndmenuowner hwndmovesize hwndcaret left top right bottom sizeof

@@ -1,0 +1,1 @@
+gcdata devic style imag foreground background hpen linewidth dash hbrush hfont hnullbitmap hwnd layout alpha gdipgraph gdippen gdipbrush foregroundpattern backgroundpattern gcdata device style image foreground background hpen linewidth dashes hbrush hfont hnullbitmap hwnd ps layout alpha gdipgraphics gdippen gdipbrush foregroundpattern backgroundpattern

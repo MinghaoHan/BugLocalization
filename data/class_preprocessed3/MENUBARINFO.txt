@@ -1,0 +1,1 @@
+menubarinfo cbsize leav top bottom hmenu hwndmenu fbarfocu ffocus sizeof menubarinfo cbsize left top right bottom hmenu hwndmenu fbarfocused ffocused sizeof

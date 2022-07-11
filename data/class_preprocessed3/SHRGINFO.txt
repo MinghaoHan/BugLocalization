@@ -1,0 +1,1 @@
+shrginfo cbsize hwndclient ptdown dwflag sizeof shrginfo cbsize hwndclient ptdown_x ptdown_y dwflags sizeof

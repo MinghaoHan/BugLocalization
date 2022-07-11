@@ -1,0 +1,1 @@
+styledtextprintopt tag separ header footer jobnam printtextforeground printtextbackground printtextfontstyl printlinebackground styledtextprintoptions page_tag separator header footer jobname printtextforeground printtextbackground printtextfontstyle printlinebackground

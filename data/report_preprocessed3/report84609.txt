@@ -1,0 +1,1 @@
+tablecolumn npe call pack column code tabl column refresh tabl datum lvttabl getcolumn pack lvttabl getcolumn pack lvttabl getcolumn pack call npe debugg tablecolumn parent getcolumn tablecolumn arrai element exist tabl element

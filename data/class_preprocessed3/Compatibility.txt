@@ -1,0 +1,1 @@
+compat pi toradian sin ceil floor pow newfileinputstream newfileoutputstream islett isletterordigit isspacechar iswhitespac exec msg getmessag interrupt equalsignorecas compatibility pi toradians cos sin ceil floor round pow2 newfileinputstream newfileoutputstream isletter isletterordigit isspacechar iswhitespace exec msgs getmessage interrupt equalsignorecase

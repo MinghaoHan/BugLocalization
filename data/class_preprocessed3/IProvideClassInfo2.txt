@@ -1,0 +1,1 @@
+iprovideclassinfo getguid iprovideclassinfo2 getguid

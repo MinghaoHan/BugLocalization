@@ -1,0 +1,1 @@
+implement gc drawfocu correctli javadoc happend draw focu support

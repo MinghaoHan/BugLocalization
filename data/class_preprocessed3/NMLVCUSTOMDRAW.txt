@@ -1,0 +1,1 @@
+nmlvcustomdraw clrtext clrtextbk isubitem sizeof nmlvcustomdraw clrtext clrtextbk isubitem sizeof

@@ -1,0 +1,1 @@
+nmlvfinditem istart flag psz lparam vkdirect sizeof nmlvfinditem istart flags psz lparam x y vkdirection sizeof

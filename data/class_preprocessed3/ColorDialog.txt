@@ -1,0 +1,1 @@
+colordialog rgb cchookproc getrgb open setrgb colordialog rgb cchookproc getrgb open setrgb

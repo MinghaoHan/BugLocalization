@@ -1,0 +1,1 @@
+fontdata datum height lang countri variant equal enumlocalesproc getheight getlocal getnam getstyl hashcod setheight setlocal setnam setstyl tostr win fontdata data height lang country variant equals enumlocalesproc getheight getlocale getname getstyle hashcode setheight setlocale setname setstyle tostring win32_new

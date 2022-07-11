@@ -1,0 +1,1 @@
+urltransf instanc cfstr ineturl ineturlid getinst javaton nativetojava gettypeid gettypenam checkurl valid urltransfer _instance cfstr_ineturl cfstr_ineturlid getinstance javatonative nativetojava gettypeids gettypenames checkurl validate

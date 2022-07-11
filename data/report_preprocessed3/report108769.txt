@@ -1,0 +1,1 @@
+swt filedialog addit clarif javadoc conveni method

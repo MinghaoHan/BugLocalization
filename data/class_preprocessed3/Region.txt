@@ -1,0 +1,1 @@
+region handl add dispos equal getbound hashcod intersect intersect isdispos isempti subtract translat tostr win region handle add contains dispose equals getbounds hashcode intersect intersects isdisposed isempty subtract translate tostring win32_new

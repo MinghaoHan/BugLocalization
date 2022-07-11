@@ -1,0 +1,1 @@
+istorag commit copyto createstorag createstream destroyel enumel openstorag openstream renameel revert setclass istorage commit copyto createstorage createstream destroyelement enumelements openstorage openstream renameelement revert setclass

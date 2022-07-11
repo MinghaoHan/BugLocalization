@@ -1,0 +1,1 @@
+mouseadapt mousedoubleclick mousedown mouseup mouseadapter mousedoubleclick mousedown mouseup

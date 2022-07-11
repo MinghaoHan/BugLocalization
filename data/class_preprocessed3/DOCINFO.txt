@@ -1,0 +1,1 @@
+docinfo cbsize lpszdocnam lpszoutput lpszdatatyp fwtype sizeof docinfo cbsize lpszdocname lpszoutput lpszdatatype fwtype sizeof

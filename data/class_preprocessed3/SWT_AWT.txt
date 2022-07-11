@@ -1,0 +1,1 @@
+swt awt embeddedframeclass load swinginiti getawthandl loadlibrari initializesw frame handleev shell componentres swt_awt embeddedframeclass loaded swinginitialized getawthandle loadlibrary initializeswing new_frame handleevent run new_shell componentresized

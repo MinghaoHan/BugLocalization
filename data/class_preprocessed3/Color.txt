@@ -1,0 +1,1 @@
+color handl dispos equal getblu getgreen getr getrgb hashcod init isdispos tostr win color handle dispose equals getblue getgreen getred getrgb hashcode init isdisposed tostring win32_new

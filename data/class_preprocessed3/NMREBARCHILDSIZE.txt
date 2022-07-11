@@ -1,0 +1,1 @@
+nmrebarchilds uband wid rcchild leav top bottom rcband sizeof nmrebarchildsize uband wid rcchild_left rcchild_top rcchild_right rcchild_bottom rcband_left rcband_top rcband_right rcband_bottom sizeof

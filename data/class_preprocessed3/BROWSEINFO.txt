@@ -1,0 +1,1 @@
+browseinfo hwndowner pidlroot pszdisplaynam lpsztitl ulflag lpfn lparam iimag sizeof browseinfo hwndowner pidlroot pszdisplayname lpsztitle ulflags lpfn lparam iimage sizeof

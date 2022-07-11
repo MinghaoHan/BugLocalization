@@ -1,0 +1,1 @@
+olefunctiondescript arg optionalargcount returntyp invokekind funckind flag callingconvent document helpfil olefunctiondescription id name args optionalargcount returntype invokekind funckind flags callingconvention documentation helpfile

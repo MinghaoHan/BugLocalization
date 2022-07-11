@@ -1,0 +1,1 @@
+formattach numer denomin offset control align divid gcd minu plu solvex solvei tostr formattachment numerator denominator offset control alignment divide gcd minus plus solvex solvey tostring

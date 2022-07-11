@@ -1,0 +1,1 @@
+ctabfolder adapt close minim maxim restor showlist ctabfolder2adapter close minimize maximize restore showlist

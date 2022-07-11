@@ -1,0 +1,1 @@
+script fontproperti cbyte wgblank wgdefault wginvalid wgkashida ikashidawidth sizeof script_fontproperties cbytes wgblank wgdefault wginvalid wgkashida ikashidawidth sizeof

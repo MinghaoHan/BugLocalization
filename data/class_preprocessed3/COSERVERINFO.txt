@@ -1,0 +1,1 @@
+coserverinfo dwreserved pwszname pauthinfo dwreserved sizeof coserverinfo dwreserved1 pwszname pauthinfo dwreserved2 sizeof

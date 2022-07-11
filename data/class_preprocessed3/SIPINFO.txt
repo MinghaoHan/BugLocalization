@@ -1,0 +1,1 @@
+sipinfo cbsize fdwflag rcvisibledesktop leav top bottom rcsiprect dwimdatas pvimdata sizeof sipinfo cbsize fdwflags rcvisibledesktop_left rcvisibledesktop_top rcvisibledesktop_right rcvisibledesktop_bottom rcsiprect_left rcsiprect_top rcsiprect_right rcsiprect_bottom dwimdatasize pvimdata sizeof

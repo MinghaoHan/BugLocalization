@@ -1,0 +1,1 @@
+osversioninfo dwosversioninfos dwmajorvers dwminorvers dwbuildnumb dwplatformid sizeof osversioninfo dwosversioninfosize dwmajorversion dwminorversion dwbuildnumber dwplatformid sizeof

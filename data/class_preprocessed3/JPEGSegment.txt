@@ -1,0 +1,1 @@
+jpegseg refer signatur verifi getsegmentmark setsegmentmark getsegmentlength setsegmentlength writetostream jpegsegment reference signature verify getsegmentmarker setsegmentmarker getsegmentlength setsegmentlength writetostream

@@ -1,0 +1,1 @@
+tchar codepag bytecount sizeof getchar length strlen tcharat tostr tchar codepage chars bytes bytecount sizeof getchars length strlen tcharat tostring

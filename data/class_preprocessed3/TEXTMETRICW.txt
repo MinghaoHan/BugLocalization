@@ -1,0 +1,1 @@
+textmetricw tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof textmetricw tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof

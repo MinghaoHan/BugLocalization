@@ -1,0 +1,1 @@
+monitor handl width height clientx clienti clientwidth clientheight equal getbound getclientarea hashcod monitor handle x y width height clientx clienty clientwidth clientheight equals getbounds getclientarea hashcode

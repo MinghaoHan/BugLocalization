@@ -1,0 +1,1 @@
+textmetrica tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof textmetrica tmfirstchar tmlastchar tmdefaultchar tmbreakchar sizeof

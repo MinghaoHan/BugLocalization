@@ -1,0 +1,1 @@
+script logattr fsoftbreak fwhitespac fcharstop fwordstop finvalid freserv sizeof script_logattr fsoftbreak fwhitespace fcharstop fwordstop finvalid freserved sizeof

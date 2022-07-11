@@ -1,0 +1,1 @@
+bitmapinfohead bisiz biwidth biheight biplan bibitcount bicompress bisizeimag bixpelspermet biypelspermet biclru biclrimport sizeof bitmapinfoheader bisize biwidth biheight biplanes bibitcount bicompression bisizeimage bixpelspermeter biypelspermeter biclrused biclrimportant sizeof

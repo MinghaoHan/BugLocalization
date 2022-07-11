@@ -1,0 +1,1 @@
+script item icharpo sizeof script_item icharpos a sizeof

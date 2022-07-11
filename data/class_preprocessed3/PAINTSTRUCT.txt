@@ -1,0 +1,1 @@
+paintstruct hdc feras leav top bottom frestor fincupd rgbreserv sizeof paintstruct hdc ferase left top right bottom frestore fincupdate rgbreserved sizeof

@@ -1,0 +1,1 @@
+drawabl intern gc dispos drawable internal_new_gc internal_dispose_gc

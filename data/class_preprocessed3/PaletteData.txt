@@ -1,0 +1,1 @@
+palettedata isdirect color redmask greenmask bluemask redshift greenshift blueshift getpixel getrgb getrgb shiftformask palettedata isdirect colors redmask greenmask bluemask redshift greenshift blueshift getpixel getrgb getrgbs shiftformask

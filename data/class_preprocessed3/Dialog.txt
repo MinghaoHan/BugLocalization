@@ -1,0 +1,1 @@
+dialog style parent titl checksubclass checkpar error getpar getstyl gettext settext dialog style parent title checksubclass checkparent error getparent getstyle gettext settext

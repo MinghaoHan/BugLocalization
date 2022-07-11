@@ -1,0 +1,1 @@
+nmlvdispinfo mask iitem isubitem statemask psztext cchtextmax iimag lparam iindent sizeof nmlvdispinfo mask iitem isubitem state statemask psztext cchtextmax iimage lparam iindent sizeof

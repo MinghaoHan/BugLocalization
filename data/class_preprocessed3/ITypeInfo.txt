@@ -1,0 +1,1 @@
+itypeinfo getdocument getfuncdesc getidsofnam getimpltypeflag getnam getreftypeinfo getreftypeofimpltyp gettypeattr getvardesc releasefuncdesc releasetypeattr releasevardesc itypeinfo getdocumentation getfuncdesc getidsofnames getimpltypeflags getnames getreftypeinfo getreftypeofimpltype gettypeattr getvardesc releasefuncdesc releasetypeattr releasevardesc

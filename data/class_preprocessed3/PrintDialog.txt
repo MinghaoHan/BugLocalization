@@ -1,0 +1,1 @@
+printdialog scope startpag endpag printtofil getscop setscop getstartpag setstartpag getendpag setendpag getprinttofil setprinttofil checksubclass open printdialog scope startpage endpage printtofile getscope setscope getstartpage setstartpage getendpage setendpage getprinttofile setprinttofile checksubclass open

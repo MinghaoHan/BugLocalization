@@ -1,0 +1,1 @@
+fontmetr handl equal getasc getaveragecharwidth getdesc getheight getlead hashcod win fontmetrics handle equals getascent getaveragecharwidth getdescent getheight getleading hashcode win32_new
