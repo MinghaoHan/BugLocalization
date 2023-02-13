@@ -1,5 +1,5 @@
 # BugLocalization
-A Demo Video: (Demo)[https://www.bilibili.com/video/BV1S54y1L7Gz/?vd_source=df0ef6c10337da12ef4b3617c51549d8]
+A Demo Video: [Demo](https://www.bilibili.com/video/BV1S54y1L7Gz/?vd_source=df0ef6c10337da12ef4b3617c51549d8)
 # Team: nobug
 
 Our work is in hope of seaching and killing any bug.
